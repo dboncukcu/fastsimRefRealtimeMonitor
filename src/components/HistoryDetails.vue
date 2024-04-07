@@ -19,11 +19,10 @@
         </template>
         <template #cell(detail)="row">
           <div class="text-center">
-            <span
-              v-html="
-                getDetailColumn(row.item.status, trainingName, row.item.detail)
-              "
-            ></span>
+            <span v-if="row.item.status.toLowerCase() === 'training'">
+              <TrainingStatus :epoch="row.item.detail.epoch+1" :maxEpoch="row.item.detail.maxEpoch" @click="showLosses"/>
+ 
+            </span>
           </div>
         </template>
       </b-table>
@@ -32,8 +31,12 @@
 </template>
 
 <script>
+import TrainingStatus from "./detail/TrainingStatus.vue";
 export default {
   name: "HistoryDetails",
+  components: {
+    TrainingStatus,
+  },
   props: {
     logs: {
       type: Array,
@@ -52,12 +55,19 @@ export default {
     return {
       detailFields: [
         { key: "status", label: "Status", thStyle: { width: "20%" } },
-        { key: "detail", label: "Detail" , thStyle: { width: "60%" } },
-        { key: "updatedDate", label: "Updated Date" , thStyle: { width: "15%" } },
+        { key: "detail", label: "Detail", thStyle: { width: "60%" } },
+        {
+          key: "updatedDate",
+          label: "Updated Date",
+          thStyle: { width: "15%" },
+        },
       ],
     };
   },
   methods: {
+    showLosses() {
+      console.log("show losses");
+    },
     getBadgeVariant(status) {
       status = status.toLowerCase();
       if (status === "training") {
@@ -93,7 +103,7 @@ export default {
                     <div style="position: absolute; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; z-index: 2; color: black; font-weight: bold;">
                         ${epoch}/${maxEpoch}
                     </div>
-                    <button style="float: right; width: 5%;" class="btn btn-secondary" data-toggle="modal" data-target="#lossesModal" onclick="showLossesChart('${trainingName}')"><i class="bi bi-graph-up-arrow"></i></button>
+                    <button style="float: right; width: 5%;" class="btn btn-secondary" data-toggle="modal" data-target="#lossesModal" @click="$emit("click",trainingName)"><i class="bi bi-graph-up-arrow"></i></button>
                 </div>
             `;
       } else if (status === "plotting") {
