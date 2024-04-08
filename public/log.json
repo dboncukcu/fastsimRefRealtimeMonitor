@@ -14982,5 +14982,23 @@
             "updatedDate": "31/03/2024 19:34:29"
         }
         ]
+    },
+    "groups" : {
+        "realtime_loss_monitoring_test" :[
+            "realtime_loss_monitoring_test_nogpu_8",
+            "realtime_loss_monitoring_test_nogpu_7",
+            "realtime_loss_monitoring_test_nogpu_6",
+            "realtime_loss_monitoring_test_nogpu_5",
+            "realtime_loss_monitoring_test_nogpu_4",
+            "realtime_loss_monitoring_test_nogpu_3",
+            "realtime_loss_monitoring_test_nogpu_2",
+            "realtime_loss_monitoring_test_nogpu_1",
+            "realtime_loss_monitoring_test_nogpu"
+        ],
+        "logTest" : [
+            "epoch100_loge",
+            "epoch100_log10",
+            "epoch100_log20"
+        ]
     }
 }
