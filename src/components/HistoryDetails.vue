@@ -18,11 +18,37 @@
           </div>
         </template>
         <template #cell(detail)="row">
-          <div class="text-center">
+          <div class="text-center clearfix">
             <span v-if="row.item.status.toLowerCase() === 'training'">
-              <TrainingStatus :epoch="row.item.detail.epoch+1" :maxEpoch="row.item.detail.maxEpoch" @click="showLosses"/>
- 
+              <TrainingStatus
+                :epoch="row.item.detail.epoch + 1"
+                :maxEpoch="row.item.detail.maxEpoch"
+                :is-most-updated="row.item.detail.epoch === maxEpoch"
+                @click="showLosses"
+              />
             </span>
+            <span
+              v-else-if="row.item.status.toLowerCase() === 'plotting'"
+              class="plotting-status"
+            >
+              <PlottingStatus :detail="row.item.detail" />
+            </span>
+            <span v-else-if="row.item.status.toLowerCase() === 'prepared'">
+              <PreparedStatus />
+            </span>
+            <span v-else-if="row.item.status.toLowerCase() === 'benchmarking'">
+              <BenchmarkingStatus />
+            </span>
+            <span v-else-if="row.item.status.toLowerCase() === 'error'">
+              <ErrorStatus :detail="row.item.detail" />
+            </span>
+            <span v-else-if="row.item.status.toLowerCase() === 'idle'">
+              <IdleStatus />
+            </span>
+            <span v-else-if="row.item.status.toLowerCase() === 'completed'">
+              <CompletedStatus :trainingName="trainingName" />
+            </span>
+            <span v-else> N/A </span>
           </div>
         </template>
       </b-table>
@@ -32,19 +58,27 @@
 
 <script>
 import TrainingStatus from "./detail/TrainingStatus.vue";
+import PlottingStatus from "./detail/PlottingStatus.vue";
+import PreparedStatus from "./detail/PreparedStatus.vue";
+import BenchmarkingStatus from "./detail/BenchmarkingStatus.vue";
+import ErrorStatus from "./detail/ErrorStatus.vue";
+import IdleStatus from "./detail/IdleStatus.vue";
+import CompletedStatus from "./detail/CompletedStatus.vue";
 export default {
   name: "HistoryDetails",
   components: {
     TrainingStatus,
+    PlottingStatus,
+    PreparedStatus,
+    BenchmarkingStatus,
+    ErrorStatus,
+    IdleStatus,
+    CompletedStatus,
   },
   props: {
     logs: {
       type: Array,
       required: true,
-    },
-    losses: {
-      type: Object,
-      default: () => ({}),
     },
     trainingName: {
       type: String,
@@ -54,19 +88,38 @@ export default {
   data() {
     return {
       detailFields: [
-        { key: "status", label: "Status", thStyle: { width: "20%" } },
-        { key: "detail", label: "Detail", thStyle: { width: "60%" } },
+        {
+          key: "status",
+          label: "Status",
+          thStyle: { width: "20%" },
+          tdClass: "align-middle",
+        },
+        {
+          key: "detail",
+          label: "Detail",
+          thStyle: { width: "60%" },
+          tdClass: "align-middle",
+        },
         {
           key: "updatedDate",
           label: "Updated Date",
           thStyle: { width: "15%" },
+          tdClass: "align-middle",
         },
       ],
     };
   },
+  computed: {
+    maxEpoch() {
+      const epochs = this.logs
+        .filter((entry) => entry.status.toLowerCase() === "training")
+        .map((entry) => entry.detail.epoch);
+      return Math.max(...epochs);
+    },
+  },
   methods: {
     showLosses() {
-      console.log("show losses");
+      this.$emit("showLosses", this.trainingName);
     },
     getBadgeVariant(status) {
       status = status.toLowerCase();
@@ -86,44 +139,6 @@ export default {
         return "bg-danger";
       }
       return "bg-danger";
-    },
-    getDetailColumn(status, trainingName, detail) {
-      status = status.toLowerCase();
-      if (status === "training") {
-        const epoch = parseInt(detail.epoch) + 1;
-        const maxEpoch = parseInt(detail.maxEpoch);
-
-        const progressPercentage = (epoch / maxEpoch) * 100;
-        return `
-                <div style="position: relative; width: 100%; height: 20px;">
-                    <div class="progress" style="position: absolute; width: 93%; height: 100%; z-index: 1;">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: ${progressPercentage}%;"
-                        aria-valuenow="${epoch}" aria-valuemin="0" aria-valuemax="${maxEpoch}"></div>
-                    </div>
-                    <div style="position: absolute; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; z-index: 2; color: black; font-weight: bold;">
-                        ${epoch}/${maxEpoch}
-                    </div>
-                    <button style="float: right; width: 5%;" class="btn btn-secondary" data-toggle="modal" data-target="#lossesModal" @click="$emit("click",trainingName)"><i class="bi bi-graph-up-arrow"></i></button>
-                </div>
-            `;
-      } else if (status === "plotting") {
-        const plotTextDisplay =
-          detail !== ""
-            ? `<span style="margin-left: 10px;">${detail}</span>`
-            : "";
-        return `<div class="spinner-grow text-warning" role="status"></div>${plotTextDisplay}`;
-      } else if (status === "completed") {
-        return `<a href="${trainingName}/" target="_blank" class="btn btn-success"><i class="bi bi-eye-fill"></i> Open</a>`;
-      } else if (status === "prepared") {
-        return "All Necessary Files Prepared.";
-      } else if (status === "idle") {
-        return `<div class="spinner-border border-transparent text-secondary"></div>`;
-      } else if (status === "benchmarking") {
-        return `<i class="bi bi-gear h3 spinner"></i>`;
-      } else if (status === "error") {
-        return `<i class="bi bi-exclamation-triangle-fill h3 text-danger"></i> ${detail}`;
-      }
-      return "N/A";
     },
   },
 };
@@ -165,5 +180,14 @@ export default {
   background-color: var(--bs-gray-200);
   border-radius: 5px;
   border: 2px solid var(--bs-white);
+}
+.plotting-status {
+  float: left;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 </style>

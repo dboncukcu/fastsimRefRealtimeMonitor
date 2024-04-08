@@ -1,7 +1,7 @@
 <template>
-  <b-container flex class="d-flex flex-column vh-100">
+  <b-container fluid class="d-flex flex-column vh-100">
     <b-row class="flex-grow-1">
-      <b-container>
+      <b-container fluid class="w-75">
             <!-- Header -->
             <page-title></page-title>
 
@@ -9,7 +9,7 @@
             <refresh-manager></refresh-manager>
 
             <!-- Tablo -->
-            <log-table :logs="logs" :losses="losses"></log-table>
+            <log-table :logs="logs"></log-table>
       </b-container>
     </b-row>
     <b-row>
@@ -37,14 +37,11 @@ export default {
   },
   data(){
     return {
-      logs: {},
-      losses: {},
-    }
+      logs: {},    }
   },
   created() {
     this.$axios.get("log.json").then(({data}) => {
       this.logs = data.trainingLogs
-      this.losses = data.losses
     }).catch((error) => {
       console.log(error);
     }); 
