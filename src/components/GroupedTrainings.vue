@@ -137,8 +137,8 @@ export default {
       const result = {};
       Object.keys(this.logs).forEach((key) => {
         const latestItem = this.logs[key].reduce((prev, current) => {
-          const prevDate = new Date(prev.updatedDate);
-          const currentDate = new Date(current.updatedDate);
+          const prevDate = this.convertDateToJSFormat(prev.updatedDate);
+          const currentDate = this.convertDateToJSFormat(current.updatedDate);
           return prevDate > currentDate ? prev : current;
         });
 
@@ -171,8 +171,8 @@ export default {
         });
 
         const lastUpdate = updateDates.reduce((prev, current) => {
-          const prevDate = new Date(prev.updatedDate);
-          const currentDate = new Date(current.updatedDate);
+          const prevDate = this.convertDateToJSFormat(prev);
+          const currentDate = this.convertDateToJSFormat(current);
           return prevDate > currentDate ? prev : current;
         });
         groupsMainItems.push({
@@ -186,6 +186,18 @@ export default {
     },
   },
   methods: {
+    convertDateToJSFormat(dateString) {
+        const parts = dateString.split(' ');
+        const dateParts = parts[0].split('/');
+        const timeParts = parts[1].split(':');
+        const year = dateParts[2];
+        const month = dateParts[1] - 1;
+        const day = dateParts[0];
+        const hour = timeParts[0];
+        const minute = timeParts[1];
+        const second = timeParts[2];
+        return new Date(year, month, day, hour, minute, second);
+      },
     // eslint-disable-next-line no-unused-vars
     onRowClicked(item, index, event) {
       // Bu örnekte, genişletilmiş öğe yönetimine ihtiyaç duyulmamaktadır.

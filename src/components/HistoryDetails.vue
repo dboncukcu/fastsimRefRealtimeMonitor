@@ -4,7 +4,7 @@
       <b-table
         striped
         hover
-        :items="logs"
+        :items="sortedLogs"
         :fields="detailFields"
         small
         class="table-wrapper"
@@ -116,8 +116,26 @@ export default {
         .map((entry) => entry.detail.epoch);
       return Math.max(...epochs);
     },
+    sortedLogs() {
+      const sortedLogs = [...this.logs];
+      return sortedLogs.sort((a, b) => {
+        return this.convertDateToJSFormat(b.updatedDate) - this.convertDateToJSFormat(a.updatedDate);
+      });
+    },
   },
   methods: {
+    convertDateToJSFormat(dateString) {
+      const parts = dateString.split(" ");
+      const dateParts = parts[0].split("/");
+      const timeParts = parts[1].split(":");
+      const year = dateParts[2];
+      const month = dateParts[1] - 1;
+      const day = dateParts[0];
+      const hour = timeParts[0];
+      const minute = timeParts[1];
+      const second = timeParts[2];
+      return new Date(year, month, day, hour, minute, second);
+    },
     showLosses() {
       this.$emit("showLosses", this.trainingName);
     },

@@ -10,17 +10,19 @@
       @row-clicked="onRowClicked"
       responsive="sm"
       id="mainHistoryTable"
+      :sort-compare="customSort"
     >
       <template #row-details="row">
-        <historyDetailItems
-          :logs="historyDetailItems(row.item.trainName)"
+        <HistoryDetails
+          :logs="logs[row.item.trainName]"
           :trainingName="row.item.trainName"
           @showLosses="showLosses"
-        ></historyDetailItems>
+          @showed="loading[row.item.trainName] = false"
+        ></HistoryDetails>
       </template>
 
       <template #cell(actions)="row">
-        <b-button size="sm" @click="row.toggleDetails">
+        <b-button size="sm" @click="row.toggleDetails()">
           {{ row.detailsShowing ? "Hide" : "Show" }} Details
         </b-button>
       </template>
@@ -68,7 +70,7 @@
     </b-table>
     <div class="pagination-container">
       <b-pagination
-      pills
+        pills
         v-model="currentPage"
         :total-rows="this.historyMainItems.length"
         :per-page="perPage"
@@ -76,7 +78,11 @@
       ></b-pagination>
       <ul class="pagination mx-2">
         <li class="page-item active">
-          <h4><b-badge variant = "primary" pill >Total {{ this.historyMainItems.length }}</b-badge></h4>
+          <h4>
+            <b-badge variant="primary" pill
+              >Total {{ this.historyMainItems.length }}</b-badge
+            >
+          </h4>
         </li>
       </ul>
     </div>
@@ -100,7 +106,7 @@
 </template>
 
 <script>
-import historyDetailItems from "./HistoryDetails.vue";
+import HistoryDetails from "./HistoryDetails.vue";
 import TrainingStatus from "./detail/TrainingStatus.vue";
 import PlottingStatus from "./detail/PlottingStatus.vue";
 import PreparedStatus from "./detail/PreparedStatus.vue";
@@ -112,7 +118,7 @@ import LossChart from "./detail/LossChart.vue";
 export default {
   name: "IndividualTrainings",
   components: {
-    historyDetailItems,
+    HistoryDetails,
     TrainingStatus,
     PlottingStatus,
     PreparedStatus,
@@ -127,6 +133,7 @@ export default {
   },
   data() {
     return {
+      loading: {},
       mainFields: [
         {
           key: "trainName",
@@ -134,6 +141,7 @@ export default {
           thStyle: { width: "30%" },
           thClass: "text-center",
           tdClass: "align-middle",
+          sortable: true,
         },
         {
           key: "status",
@@ -141,6 +149,7 @@ export default {
           thStyle: { width: "10%" },
           thClass: "text-center",
           tdClass: "align-middle",
+          sortable: true,
         },
         {
           key: "detail",
@@ -155,6 +164,8 @@ export default {
           thStyle: { width: "20%" },
           thClass: "text-center",
           tdClass: "align-middle",
+          sortable: true,
+          sortDirection: "desc",
         },
         {
           key: "actions",
@@ -175,8 +186,8 @@ export default {
       const result = [];
       Object.keys(this.logs).forEach((key) => {
         const latestItem = this.logs[key].reduce((prev, current) => {
-          const prevDate = new Date(prev.updatedDate);
-          const currentDate = new Date(current.updatedDate);
+          const prevDate = this.convertDateToJSFormat(prev.updatedDate);
+          const currentDate = this.convertDateToJSFormat(current.updatedDate);
           return prevDate > currentDate ? prev : current;
         });
 
@@ -188,31 +199,63 @@ export default {
       if (
         Object.prototype.hasOwnProperty.call(this.logs, this.modalTrainName)
       ) {
-          return this.logs[this.modalTrainName].map((item) => {
+        return this.logs[this.modalTrainName]
+          .map((item) => {
             if (item.status.toLowerCase() === "training") {
               return {
                 epoch: item.detail.epoch,
-                trainLoss: Object.prototype.hasOwnProperty.call(item.detail,"trainLoss") ? this.sanitizeLossValues(item.detail.trainLoss) : null,
-                validationLoss: Object.prototype.hasOwnProperty.call(item.detail,"trainLoss") ? this.sanitizeLossValues(item.detail.valLoss) : null,
+                trainLoss: Object.prototype.hasOwnProperty.call(
+                  item.detail,
+                  "trainLoss"
+                )
+                  ? this.sanitizeLossValues(item.detail.trainLoss)
+                  : null,
+                validationLoss: Object.prototype.hasOwnProperty.call(
+                  item.detail,
+                  "trainLoss"
+                )
+                  ? this.sanitizeLossValues(item.detail.valLoss)
+                  : null,
               };
             }
-          }).filter((item) => item !== null && item !== undefined);
+          })
+          .filter((item) => item !== null && item !== undefined);
       }
       return [];
     },
   },
   methods: {
+    convertDateToJSFormat(dateString) {
+      const parts = dateString.split(" ");
+      const dateParts = parts[0].split("/");
+      const timeParts = parts[1].split(":");
+      const year = dateParts[2];
+      const month = dateParts[1] - 1;
+      const day = dateParts[0];
+      const hour = timeParts[0];
+      const minute = timeParts[1];
+      const second = timeParts[2];
+      return new Date(year, month, day, hour, minute, second);
+    },
+    customSort(a, b, key) {
+      if (key === "updatedDate") {
+        const prevDate = this.convertDateToJSFormat(a[key]);
+        const currentDate = this.convertDateToJSFormat(b[key]);
+        return prevDate > currentDate ? -1 : prevDate < currentDate ? 1 : 0;
+      }
+      return a[key] > b[key] ? 1 : a[key] < b[key] ? -1 : 0;
+    },
     sanitizeLossValues(data) {
-          if (
-            isNaN(data) ||
-            data === null ||
-            data === undefined ||
-            data === "NaN" ||
-            data === "none"
-          ) {
-            data = null;
-          }
-   
+      if (
+        isNaN(data) ||
+        data === null ||
+        data === undefined ||
+        data === "NaN" ||
+        data === "none"
+      ) {
+        data = null;
+      }
+
       return data;
     },
     showLosses(trainName) {
@@ -222,9 +265,6 @@ export default {
     // eslint-disable-next-line no-unused-vars
     onRowClicked(item, index, event) {
       // Bu örnekte, genişletilmiş öğe yönetimine ihtiyaç duyulmamaktadır.
-    },
-    historyDetailItems(trainName) {
-      return this.logs[trainName];
     },
     getBadgeVariant(status) {
       status = status.toLowerCase();
