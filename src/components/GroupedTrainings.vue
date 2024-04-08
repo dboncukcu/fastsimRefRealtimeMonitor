@@ -175,8 +175,6 @@ export default {
           const currentDate = new Date(current.updatedDate);
           return prevDate > currentDate ? prev : current;
         });
-
-        console.log(updateDates);
         groupsMainItems.push({
           groupName: key,
           progress: temp,

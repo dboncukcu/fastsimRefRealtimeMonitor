@@ -16,8 +16,10 @@
           active-nav-item-class="font-weight-bold text-uppercase bg-dark"
           nav-class="font-weight-bold text-uppercase"
           lazy
+          @activate-tab="changeTab"
+          :value="Number(activeTab)"
         >
-          <b-tab title="Individual Trainings" active>
+          <b-tab title="Individual Trainings">
             <individual-trainings :logs="individualTrainings"></individual-trainings>
           </b-tab>
           <b-tab title="Grouped Trainings">
@@ -54,7 +56,14 @@ export default {
     return {
       logs: {},
       groups: {},
+      activeTab:  ""
     };
+  },
+  methods: {
+    changeTab(tab) {
+      this.activeTab = tab;
+      localStorage.setItem("activeTab", tab);
+    }
   },
   created() {
     this.$axios
@@ -66,8 +75,23 @@ export default {
       .catch((error) => {
         console.log(error);
       });
+
+      const activeTab = localStorage.getItem("activeTab");
+      if (activeTab) {
+        this.activeTab = activeTab
+      }else{
+        this.activeTab = 0
+      }
+
   },
   computed: {
+    displayedTab(){
+      if (typeof this.activeTab === "number") {
+        return this.activeTab
+      }else{        
+        return 0
+      }
+    },
     groupedTrainingsName() {
       if (Object.keys(this.groups).length === 0) return [];
       return Object.values(this.groups).flat();
