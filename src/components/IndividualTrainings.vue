@@ -41,6 +41,7 @@
               :maxEpoch="row.item.detail.maxEpoch"
               :is-most-updated="true"
               @click="showLosses(row.item.trainName)"
+              @openArch="showArch(row.item.trainName)"
             />
           </span>
           <span
@@ -135,12 +136,12 @@ export default {
     return {
       loading: {},
       mainFields: [
-        {
+          {
           key: "trainName",
           label: "Train Tag",
-          thStyle: { width: "30%" },
+          thStyle: { width: "30%", whiteSpace: "normal", wordWrap: "break-word" },
           thClass: "text-center",
-          tdClass: "align-middle",
+          tdClass: "align-middle text-wrap",
           sortable: true,
         },
         {
@@ -284,6 +285,9 @@ export default {
         return "bg-danger";
       }
       return "bg-danger";
+    },
+    showArch(trainName) {
+      window.open(trainName+'/model_architecture.pdf', "_blank")
     },
   },
 };

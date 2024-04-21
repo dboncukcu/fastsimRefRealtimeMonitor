@@ -106,6 +106,8 @@ export default {
           thStyle: { width: "15%" },
           thClass: "text-center",
           tdClass: "text-center align-middle",
+          sortable: true,
+
         },
         {
           key: "actions",
@@ -116,7 +118,7 @@ export default {
         },
       ],
       currentPage: 1,
-      perPage: 5,
+      perPage: 8,
       expandedItem: null,
       modalTrainName: "",
     };
@@ -182,6 +184,7 @@ export default {
         });
       }
 
+      groupsMainItems.sort((a, b) => this.convertDateToJSFormat(b.updatedDate) - this.convertDateToJSFormat(a.updatedDate));
       return groupsMainItems;
     },
   },
