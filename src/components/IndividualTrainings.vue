@@ -199,7 +199,7 @@ export default {
         },
       ],
       currentPage: 1,
-      perPage: 5,
+      perPage: 7,
       expandedItem: null,
       modalTrainName: "",
     };
