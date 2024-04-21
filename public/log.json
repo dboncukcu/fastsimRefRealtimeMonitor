@@ -19,879 +19,2325 @@
             "epoch100_loge"
         ],
         "recJet_pT_tail_refinement": [
+            "sb5_lpsb_2_nhl_1024_bs_2048_nb512_lr_1em5_epoch1000_tanh1200_log_10_pt_log",
             "sb5_lpsb_2_nhl_1024_bs_2048_nb512_lr_1em5_epoch1000_tanh1200_log_10_pt_tanhlogit",
-            "sb6_lpsb_2_nhl_1024_bs_2048_nb512_lr_1em5_epoch1000_tanh1200_log_10_pt_tanhlogit",
             "sb6_lpsb_2_nhl_1024_bs_2048_nb512_lr_1em5_epoch1000_tanh1200_log_10_pt_log",
-            "sb5_lpsb_2_nhl_1024_bs_2048_nb512_lr_1em5_epoch1000_tanh1200_log_10_pt_log"
+            "sb6_lpsb_2_nhl_1024_bs_2048_nb512_lr_1em5_epoch1000_tanh1200_log_10_pt_tanhlogit",
+            "sb5_lpsb_2_nhl_2048_bs_2048_nb512_lr_1em5_epoch1000_tanh1200_log_10_pt_tanhlogit",
+            "sb5_lpsb_2_nhl_2048_bs_2048_nb512_lr_1em5_epoch1000_tanh1200_log_10_pt_log"
         ]
     },
     "trainingLogs": {
-        "sb5_lpsb_2_nhl_1024_bs_2048_nb512_lr_1em5_epoch1000_tanh1200_log_10_pt_log": [
+        "sb6_lpsb_2_nhl_1024_bs_2048_nb512_lr_1em5_epoch1000_tanh1200_log_10_pt_tanhlogit": [
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 40,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8004706947803497,
+                    "valLoss": 1.8074960041046142
+                },
+                "updatedDate": "21/04/2024 06:27:45"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 39,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7997900910377502,
+                    "valLoss": 1.8055607771873474
+                },
+                "updatedDate": "21/04/2024 06:24:40"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 38,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.800480376958847,
+                    "valLoss": 1.7960485219955444
+                },
+                "updatedDate": "21/04/2024 06:21:36"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 37,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8009071066379547,
+                    "valLoss": 1.8002465152740479
+                },
+                "updatedDate": "21/04/2024 06:18:31"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 36,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8003634493350982,
+                    "valLoss": 1.8081367361545562
+                },
+                "updatedDate": "21/04/2024 06:15:26"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 35,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8006843864917754,
+                    "valLoss": 1.8096577322483063
+                },
+                "updatedDate": "21/04/2024 06:12:21"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 34,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8007685000896454,
+                    "valLoss": 1.8095487642288208
+                },
+                "updatedDate": "21/04/2024 06:09:16"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 33,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7997561650276184,
+                    "valLoss": 1.8150338661670684
+                },
+                "updatedDate": "21/04/2024 06:06:11"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 32,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.801472585439682,
+                    "valLoss": 1.8018776440620423
+                },
+                "updatedDate": "21/04/2024 06:03:06"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 31,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8000038979053496,
+                    "valLoss": 1.8122377336025237
+                },
+                "updatedDate": "21/04/2024 06:00:02"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 30,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8010946221351622,
+                    "valLoss": 1.8144499373435974
+                },
+                "updatedDate": "21/04/2024 05:56:57"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 29,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8009761633872985,
+                    "valLoss": 1.8143729019165038
+                },
+                "updatedDate": "21/04/2024 05:53:52"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 28,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8022582428455354,
+                    "valLoss": 1.816784052848816
+                },
+                "updatedDate": "21/04/2024 05:50:47"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 27,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8010954141616822,
+                    "valLoss": 1.8126661503314971
+                },
+                "updatedDate": "21/04/2024 05:47:43"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 26,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8020296375751494,
+                    "valLoss": 1.82387318611145
+                },
+                "updatedDate": "21/04/2024 05:44:38"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 25,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8007930984497071,
+                    "valLoss": 1.8245606994628907
+                },
+                "updatedDate": "21/04/2024 05:41:36"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 24,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.80197913646698,
+                    "valLoss": 1.8167714190483093
+                },
+                "updatedDate": "21/04/2024 05:38:32"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 23,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8014386403560638,
+                    "valLoss": 1.8266540026664735
+                },
+                "updatedDate": "21/04/2024 05:35:27"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 22,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8019606420993806,
+                    "valLoss": 1.8124801874160767
+                },
+                "updatedDate": "21/04/2024 05:32:22"
+            },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 21,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005627238901332021,
-                    "valLoss": 0.005585343320854008
+                    "trainLoss": 1.8017771940231324,
+                    "valLoss": 1.814107176065445
                 },
-                "updatedDate": "21/04/2024 02:07:47"
+                "updatedDate": "21/04/2024 05:29:17"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 20,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005644296946935356,
-                    "valLoss": 0.0055925710126757625
+                    "trainLoss": 1.8015656929016113,
+                    "valLoss": 1.8167842710018158
                 },
-                "updatedDate": "21/04/2024 02:05:18"
+                "updatedDate": "21/04/2024 05:26:12"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 19,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005640859337523579,
-                    "valLoss": 0.005592475621961057
+                    "trainLoss": 1.8025315418243408,
+                    "valLoss": 1.8108188593387604
                 },
-                "updatedDate": "21/04/2024 02:02:47"
+                "updatedDate": "21/04/2024 05:23:08"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 18,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005655930387787521,
-                    "valLoss": 0.005599347655661404
+                    "trainLoss": 1.8027356965541839,
+                    "valLoss": 1.8042062973976136
                 },
-                "updatedDate": "21/04/2024 02:00:18"
+                "updatedDate": "21/04/2024 05:20:04"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 17,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005641240492463112,
-                    "valLoss": 0.005603730152361095
+                    "trainLoss": 1.8018603460788727,
+                    "valLoss": 1.8109446132183076
                 },
-                "updatedDate": "21/04/2024 01:57:50"
+                "updatedDate": "21/04/2024 05:16:59"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 16,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005625022002495825,
-                    "valLoss": 0.005590376425534487
+                    "trainLoss": 1.8031442313194275,
+                    "valLoss": 1.811036559343338
                 },
-                "updatedDate": "21/04/2024 01:55:21"
+                "updatedDate": "21/04/2024 05:13:54"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 15,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005655648477375507,
-                    "valLoss": 0.00561091773211956
+                    "trainLoss": 1.8026360049247743,
+                    "valLoss": 1.7991306030750274
                 },
-                "updatedDate": "21/04/2024 01:52:49"
+                "updatedDate": "21/04/2024 05:10:49"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 14,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005646038669161499,
-                    "valLoss": 0.005624970206990838
+                    "trainLoss": 1.8035505456924439,
+                    "valLoss": 1.8120298504829406
                 },
-                "updatedDate": "21/04/2024 01:50:16"
+                "updatedDate": "21/04/2024 05:07:44"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 13,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005647254581563174,
-                    "valLoss": 0.005595526425167918
+                    "trainLoss": 1.8030833263397217,
+                    "valLoss": 1.8196400558948518
                 },
-                "updatedDate": "21/04/2024 01:47:47"
+                "updatedDate": "21/04/2024 05:04:40"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 12,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005658147599548102,
-                    "valLoss": 0.0056170214433223006
+                    "trainLoss": 1.8044651024341583,
+                    "valLoss": 1.8128914880752562
                 },
-                "updatedDate": "21/04/2024 01:45:16"
+                "updatedDate": "21/04/2024 05:01:36"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 11,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005652795438654721,
-                    "valLoss": 0.005626647239550948
+                    "trainLoss": 1.8044760942459106,
+                    "valLoss": 1.8162647247314454
                 },
-                "updatedDate": "21/04/2024 01:42:44"
+                "updatedDate": "21/04/2024 04:58:33"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 10,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.0056636803662404415,
-                    "valLoss": 0.005640291147865355
+                    "trainLoss": 1.8051090333461761,
+                    "valLoss": 1.8019711291790008
                 },
-                "updatedDate": "21/04/2024 01:40:10"
+                "updatedDate": "21/04/2024 04:55:28"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 9,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005652348986826837,
-                    "valLoss": 0.0056450847629457715
+                    "trainLoss": 1.8045260691642762,
+                    "valLoss": 1.821185472011566
                 },
-                "updatedDate": "21/04/2024 01:37:37"
+                "updatedDate": "21/04/2024 04:52:23"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 8,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005651834344491362,
-                    "valLoss": 0.005623038671910763
+                    "trainLoss": 1.8055402159690856,
+                    "valLoss": 1.810670714378357
                 },
-                "updatedDate": "21/04/2024 01:35:00"
+                "updatedDate": "21/04/2024 04:49:18"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 7,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005671914383769036,
-                    "valLoss": 0.005630020103417337
+                    "trainLoss": 1.805678150177002,
+                    "valLoss": 1.8199166476726532
                 },
-                "updatedDate": "21/04/2024 01:32:30"
+                "updatedDate": "21/04/2024 04:46:14"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 6,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005688552092760801,
-                    "valLoss": 0.005633840938098728
+                    "trainLoss": 1.8065987911224366,
+                    "valLoss": 1.8272056770324707
                 },
-                "updatedDate": "21/04/2024 01:29:59"
+                "updatedDate": "21/04/2024 04:43:11"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 5,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005660078038461506,
-                    "valLoss": 0.005631094221025705
+                    "trainLoss": 1.8066075813770295,
+                    "valLoss": 1.8306934201717378
                 },
-                "updatedDate": "21/04/2024 01:27:27"
+                "updatedDate": "21/04/2024 04:40:08"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 4,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.0056778412209823725,
-                    "valLoss": 0.005651979614049197
+                    "trainLoss": 1.8078288946151733,
+                    "valLoss": 1.8173210227489471
                 },
-                "updatedDate": "21/04/2024 01:24:55"
+                "updatedDate": "21/04/2024 04:37:05"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 3,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005692623826675117,
-                    "valLoss": 0.005655808681622148
+                    "trainLoss": 1.8081848759651185,
+                    "valLoss": 1.8193889617919923
                 },
-                "updatedDate": "21/04/2024 01:22:27"
+                "updatedDate": "21/04/2024 04:34:00"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 2,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.00569236396253109,
-                    "valLoss": 0.005656581786461175
+                    "trainLoss": 1.8098923916816712,
+                    "valLoss": 1.8202594411373139
                 },
-                "updatedDate": "21/04/2024 01:20:00"
+                "updatedDate": "21/04/2024 04:30:55"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 1,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005722521496005356,
-                    "valLoss": 0.0056803236296400425
+                    "trainLoss": 1.8103735806941985,
+                    "valLoss": 1.8257056093215942
                 },
-                "updatedDate": "21/04/2024 01:17:34"
+                "updatedDate": "21/04/2024 04:27:49"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 0,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005865003000944852,
-                    "valLoss": 0.005715000391937793
+                    "trainLoss": 1.8234739346504212,
+                    "valLoss": 1.8233635199069977
                 },
-                "updatedDate": "21/04/2024 01:15:08"
+                "updatedDate": "21/04/2024 04:24:44"
             },
             {
                 "status": "Benchmarking",
                 "detail": "Status detail not specified",
-                "updatedDate": "21/04/2024 01:09:44"
+                "updatedDate": "21/04/2024 04:17:43"
             },
             {
                 "status": "Prepared",
                 "detail": "Status detail not specified",
-                "updatedDate": "21/04/2024 00:56:43"
+                "updatedDate": "21/04/2024 04:17:24"
             },
             {
                 "status": "idle",
                 "detail": "Status detail not specified",
-                "updatedDate": "21/04/2024 00:56:04"
-            }
-        ],
-        "sb6_lpsb_2_nhl_1024_bs_2048_nb512_lr_1em5_epoch1000_tanh1200_log_10_pt_tanhlogit": [
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 19,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.005615640494041145,
-                    "valLoss": 0.005568383042700588
-                },
-                "updatedDate": "21/04/2024 02:07:37"
-            },
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 18,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.005636034839786589,
-                    "valLoss": 0.0055732680577784775
-                },
-                "updatedDate": "21/04/2024 02:04:15"
-            },
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 17,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.005645185627043247,
-                    "valLoss": 0.005581434764899314
-                },
-                "updatedDate": "21/04/2024 02:00:52"
-            },
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 16,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.005634662173688412,
-                    "valLoss": 0.0055774652445688844
-                },
-                "updatedDate": "21/04/2024 01:57:30"
-            },
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 15,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.0056370734916999935,
-                    "valLoss": 0.005581316146999598
-                },
-                "updatedDate": "21/04/2024 01:54:08"
-            },
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 14,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.005603662348352373,
-                    "valLoss": 0.005588668207637966
-                },
-                "updatedDate": "21/04/2024 01:50:45"
-            },
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 13,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.005646770190447569,
-                    "valLoss": 0.005581535026431083
-                },
-                "updatedDate": "21/04/2024 01:47:21"
-            },
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 12,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.005640193281695247,
-                    "valLoss": 0.005586183019913733
-                },
-                "updatedDate": "21/04/2024 01:43:58"
-            },
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 11,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.005623165110126138,
-                    "valLoss": 0.0055890378775075075
-                },
-                "updatedDate": "21/04/2024 01:40:36"
-            },
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 10,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.0056253818031400445,
-                    "valLoss": 0.005620357571169734
-                },
-                "updatedDate": "21/04/2024 01:37:13"
-            },
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 9,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.005628975685685873,
-                    "valLoss": 0.005591451833024621
-                },
-                "updatedDate": "21/04/2024 01:33:50"
-            },
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 8,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.005651508829556406,
-                    "valLoss": 0.0055976684903725985
-                },
-                "updatedDate": "21/04/2024 01:30:29"
-            },
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 7,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.005636226403526962,
-                    "valLoss": 0.0056297738896682855
-                },
-                "updatedDate": "21/04/2024 01:27:06"
-            },
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 6,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.00563229919038713,
-                    "valLoss": 0.005623279325664044
-                },
-                "updatedDate": "21/04/2024 01:23:44"
-            },
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 5,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.005652351854369044,
-                    "valLoss": 0.005621740305796266
-                },
-                "updatedDate": "21/04/2024 01:20:23"
-            },
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 4,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.005688973790034651,
-                    "valLoss": 0.005615789201110602
-                },
-                "updatedDate": "21/04/2024 01:17:01"
-            },
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 3,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.005662619783543051,
-                    "valLoss": 0.00564086580183357
-                },
-                "updatedDate": "21/04/2024 01:13:40"
-            },
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 2,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.005667363048531115,
-                    "valLoss": 0.005636138222180307
-                },
-                "updatedDate": "21/04/2024 01:10:18"
-            },
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 1,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.005700416209176183,
-                    "valLoss": 0.005667518805712462
-                },
-                "updatedDate": "21/04/2024 01:06:56"
-            },
-            {
-                "status": "Training",
-                "detail": {
-                    "epoch": 0,
-                    "maxEpoch": 1000,
-                    "trainLoss": 0.005921489083208144,
-                    "valLoss": 0.005707308598794043
-                },
-                "updatedDate": "21/04/2024 01:03:32"
-            },
-            {
-                "status": "Benchmarking",
-                "detail": "Status detail not specified",
-                "updatedDate": "21/04/2024 00:55:37"
-            },
-            {
-                "status": "Prepared",
-                "detail": "Status detail not specified",
-                "updatedDate": "21/04/2024 00:54:42"
-            },
-            {
-                "status": "idle",
-                "detail": "Status detail not specified",
-                "updatedDate": "21/04/2024 00:54:09"
+                "updatedDate": "21/04/2024 04:16:24"
             }
         ],
         "sb6_lpsb_2_nhl_1024_bs_2048_nb512_lr_1em5_epoch1000_tanh1200_log_10_pt_log": [
             {
                 "status": "Training",
                 "detail": {
+                    "epoch": 32,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7957237033843994,
+                    "valLoss": 1.788749681711197
+                },
+                "updatedDate": "21/04/2024 06:27:41"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 31,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7966829640865325,
+                    "valLoss": 1.7809325158596039
+                },
+                "updatedDate": "21/04/2024 06:23:51"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 30,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7958859536647798,
+                    "valLoss": 1.7851556754112243
+                },
+                "updatedDate": "21/04/2024 06:20:00"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 29,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7959105637073516,
+                    "valLoss": 1.776054253578186
+                },
+                "updatedDate": "21/04/2024 06:16:10"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 28,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7970224599838256,
+                    "valLoss": 1.78840114235878
+                },
+                "updatedDate": "21/04/2024 06:12:21"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 27,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7965105803012849,
+                    "valLoss": 1.7873094487190246
+                },
+                "updatedDate": "21/04/2024 06:08:32"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 26,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7970904960632323,
+                    "valLoss": 1.782074419260025
+                },
+                "updatedDate": "21/04/2024 06:04:43"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 25,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7965731012821198,
+                    "valLoss": 1.7968978548049928
+                },
+                "updatedDate": "21/04/2024 06:00:58"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 24,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7968561210632323,
+                    "valLoss": 1.7932323265075683
+                },
+                "updatedDate": "21/04/2024 05:57:12"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 23,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.79703475522995,
+                    "valLoss": 1.77623202085495
+                },
+                "updatedDate": "21/04/2024 05:53:26"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 22,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7977649312019348,
+                    "valLoss": 1.7843980884552002
+                },
+                "updatedDate": "21/04/2024 05:49:38"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 21,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.797491641998291,
+                    "valLoss": 1.797960569858551
+                },
+                "updatedDate": "21/04/2024 05:45:52"
+            },
+            {
+                "status": "Training",
+                "detail": {
                     "epoch": 20,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005673704029992223,
-                    "valLoss": 0.005703796804882586
+                    "trainLoss": 1.7973147387504578,
+                    "valLoss": 1.7947494113445281
                 },
-                "updatedDate": "21/04/2024 02:05:38"
+                "updatedDate": "21/04/2024 05:42:06"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 19,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005659488083794713,
-                    "valLoss": 0.005694754626601934
+                    "trainLoss": 1.7974823968410492,
+                    "valLoss": 1.7904294157028198
                 },
-                "updatedDate": "21/04/2024 02:02:58"
+                "updatedDate": "21/04/2024 05:38:17"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 18,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005703340670093894,
-                    "valLoss": 0.0056969444220885635
+                    "trainLoss": 1.797700121164322,
+                    "valLoss": 1.8041018795967103
                 },
-                "updatedDate": "21/04/2024 02:00:26"
+                "updatedDate": "21/04/2024 05:34:27"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 17,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.00567957067117095,
-                    "valLoss": 0.005710971960797906
+                    "trainLoss": 1.7975458121299743,
+                    "valLoss": 1.792509914636612
                 },
-                "updatedDate": "21/04/2024 01:57:52"
+                "updatedDate": "21/04/2024 05:30:38"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 16,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005710529271513224,
-                    "valLoss": 0.005715442346408963
+                    "trainLoss": 1.797630066394806,
+                    "valLoss": 1.7906528580188752
                 },
-                "updatedDate": "21/04/2024 01:55:16"
+                "updatedDate": "21/04/2024 05:26:49"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 15,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005711565287783742,
-                    "valLoss": 0.0057006705412641166
+                    "trainLoss": 1.7990318965911865,
+                    "valLoss": 1.7904154419898988
                 },
-                "updatedDate": "21/04/2024 01:52:41"
+                "updatedDate": "21/04/2024 05:22:59"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 14,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.0056875865627080205,
-                    "valLoss": 0.005709821437485516
+                    "trainLoss": 1.7988536229133607,
+                    "valLoss": 1.7818023657798767
                 },
-                "updatedDate": "21/04/2024 01:50:14"
+                "updatedDate": "21/04/2024 05:19:10"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 13,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005704954005777836,
-                    "valLoss": 0.005700170625932515
+                    "trainLoss": 1.7990832166671753,
+                    "valLoss": 1.7851127946376801
                 },
-                "updatedDate": "21/04/2024 01:47:38"
+                "updatedDate": "21/04/2024 05:15:21"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 12,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005682244096882641,
-                    "valLoss": 0.0057203363580629225
+                    "trainLoss": 1.799607366323471,
+                    "valLoss": 1.7999389004707336
                 },
-                "updatedDate": "21/04/2024 01:45:02"
+                "updatedDate": "21/04/2024 05:11:31"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 11,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005692196569405496,
-                    "valLoss": 0.005727075398899615
+                    "trainLoss": 1.7995805385112762,
+                    "valLoss": 1.7904354226589203
                 },
-                "updatedDate": "21/04/2024 01:42:27"
+                "updatedDate": "21/04/2024 05:07:42"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 10,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005705637242645025,
-                    "valLoss": 0.005719105829484761
+                    "trainLoss": 1.8003666033744812,
+                    "valLoss": 1.8022178959846498
                 },
-                "updatedDate": "21/04/2024 01:39:48"
+                "updatedDate": "21/04/2024 05:03:54"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 9,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005711556482128799,
-                    "valLoss": 0.005738531681708991
+                    "trainLoss": 1.8001638617515563,
+                    "valLoss": 1.7943157470226287
                 },
-                "updatedDate": "21/04/2024 01:37:04"
+                "updatedDate": "21/04/2024 05:00:07"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 8,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005690896758809686,
-                    "valLoss": 0.005730765508487821
+                    "trainLoss": 1.7995152432918549,
+                    "valLoss": 1.7932675457000733
                 },
-                "updatedDate": "21/04/2024 01:34:24"
+                "updatedDate": "21/04/2024 04:56:18"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 7,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.0057246258687227965,
-                    "valLoss": 0.005725752944126725
+                    "trainLoss": 1.8011917417049408,
+                    "valLoss": 1.7854171979427338
                 },
-                "updatedDate": "21/04/2024 01:31:49"
+                "updatedDate": "21/04/2024 04:52:29"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 6,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005727174089290202,
-                    "valLoss": 0.005738249416463077
+                    "trainLoss": 1.8005483484268188,
+                    "valLoss": 1.7930773949623109
                 },
-                "updatedDate": "21/04/2024 01:29:08"
+                "updatedDate": "21/04/2024 04:48:39"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 5,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005718204921111464,
-                    "valLoss": 0.005745961926877498
+                    "trainLoss": 1.801351419687271,
+                    "valLoss": 1.7809736025333405
                 },
-                "updatedDate": "21/04/2024 01:26:31"
+                "updatedDate": "21/04/2024 04:44:49"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 4,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005727172097191214,
-                    "valLoss": 0.005772576322779059
+                    "trainLoss": 1.8015010888576508,
+                    "valLoss": 1.789673320055008
                 },
-                "updatedDate": "21/04/2024 01:23:53"
+                "updatedDate": "21/04/2024 04:40:58"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 3,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005735206228680909,
-                    "valLoss": 0.005767337414436042
+                    "trainLoss": 1.8019733273983,
+                    "valLoss": 1.7856967008113862
                 },
-                "updatedDate": "21/04/2024 01:21:27"
+                "updatedDate": "21/04/2024 04:37:08"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 2,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005758845320902765,
-                    "valLoss": 0.005772355999797582
+                    "trainLoss": 1.8034476110935211,
+                    "valLoss": 1.7852507042884826
                 },
-                "updatedDate": "21/04/2024 01:18:52"
+                "updatedDate": "21/04/2024 04:33:14"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 1,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005756578451953829,
-                    "valLoss": 0.005781348142772913
+                    "trainLoss": 1.8060313360691072,
+                    "valLoss": 1.78831707239151
                 },
-                "updatedDate": "21/04/2024 01:16:23"
+                "updatedDate": "21/04/2024 04:29:22"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 0,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.0059310477878898385,
-                    "valLoss": 0.005848228931427002
+                    "trainLoss": 1.8206418216228486,
+                    "valLoss": 1.8026241767406463
                 },
-                "updatedDate": "21/04/2024 01:13:53"
+                "updatedDate": "21/04/2024 04:25:32"
             },
             {
                 "status": "Benchmarking",
                 "detail": "Status detail not specified",
-                "updatedDate": "21/04/2024 01:08:22"
+                "updatedDate": "21/04/2024 04:16:53"
             },
             {
                 "status": "Prepared",
                 "detail": "Status detail not specified",
-                "updatedDate": "21/04/2024 00:56:43"
+                "updatedDate": "21/04/2024 04:16:28"
             },
             {
                 "status": "idle",
                 "detail": "Status detail not specified",
-                "updatedDate": "21/04/2024 00:55:57"
+                "updatedDate": "21/04/2024 04:16:04"
+            }
+        ],
+        "sb5_lpsb_2_nhl_1024_bs_2048_nb512_lr_1em5_epoch1000_tanh1200_log_10_pt_log": [
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 40,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7969345552921294,
+                    "valLoss": 1.7787436580657958
+                },
+                "updatedDate": "21/04/2024 06:27:39"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 39,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7973445796966552,
+                    "valLoss": 1.7845063853263854
+                },
+                "updatedDate": "21/04/2024 06:24:32"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 38,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7964252302646637,
+                    "valLoss": 1.8003730869293213
+                },
+                "updatedDate": "21/04/2024 06:21:26"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 37,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7973594558238983,
+                    "valLoss": 1.7916915786266328
+                },
+                "updatedDate": "21/04/2024 06:18:18"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 36,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7973160376548767,
+                    "valLoss": 1.7929223799705505
+                },
+                "updatedDate": "21/04/2024 06:15:11"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 35,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7975219871997834,
+                    "valLoss": 1.790045791864395
+                },
+                "updatedDate": "21/04/2024 06:12:05"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 34,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.797129401922226,
+                    "valLoss": 1.797738492488861
+                },
+                "updatedDate": "21/04/2024 06:08:58"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 33,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7983912806510924,
+                    "valLoss": 1.7883645713329315
+                },
+                "updatedDate": "21/04/2024 06:05:51"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 32,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7977818417549134,
+                    "valLoss": 1.7958995580673218
+                },
+                "updatedDate": "21/04/2024 06:02:44"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 31,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7988720314502715,
+                    "valLoss": 1.794047086238861
+                },
+                "updatedDate": "21/04/2024 05:59:37"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 30,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7976208560466767,
+                    "valLoss": 1.8020599710941314
+                },
+                "updatedDate": "21/04/2024 05:56:30"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 29,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7986647939682008,
+                    "valLoss": 1.790015457868576
+                },
+                "updatedDate": "21/04/2024 05:53:23"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 28,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7986893880367278,
+                    "valLoss": 1.7985784351825713
+                },
+                "updatedDate": "21/04/2024 05:50:16"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 27,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7989786357879638,
+                    "valLoss": 1.7973133051395416
+                },
+                "updatedDate": "21/04/2024 05:47:09"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 26,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7984804439544677,
+                    "valLoss": 1.7987241125106812
+                },
+                "updatedDate": "21/04/2024 05:44:02"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 25,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7991677718162538,
+                    "valLoss": 1.7913512444496156
+                },
+                "updatedDate": "21/04/2024 05:40:55"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 24,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7991920866966247,
+                    "valLoss": 1.782583259344101
+                },
+                "updatedDate": "21/04/2024 05:37:48"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 23,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.799292825460434,
+                    "valLoss": 1.7949808192253114
+                },
+                "updatedDate": "21/04/2024 05:34:41"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 22,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8006085083484649,
+                    "valLoss": 1.7910953211784362
+                },
+                "updatedDate": "21/04/2024 05:31:34"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 21,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7995631539821624,
+                    "valLoss": 1.7945287835597992
+                },
+                "updatedDate": "21/04/2024 05:28:27"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 20,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8000386168956757,
+                    "valLoss": 1.795674751996994
+                },
+                "updatedDate": "21/04/2024 05:25:20"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 19,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8004075603485108,
+                    "valLoss": 1.7962811291217804
+                },
+                "updatedDate": "21/04/2024 05:22:13"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 18,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8013484978675842,
+                    "valLoss": 1.7924364852905272
+                },
+                "updatedDate": "21/04/2024 05:19:06"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 17,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8001021959781647,
+                    "valLoss": 1.8089142072200775
+                },
+                "updatedDate": "21/04/2024 05:15:59"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 16,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8012436270713805,
+                    "valLoss": 1.7997989988327026
+                },
+                "updatedDate": "21/04/2024 05:12:52"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 15,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8017013909816741,
+                    "valLoss": 1.8009209537506103
+                },
+                "updatedDate": "21/04/2024 05:09:46"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 14,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8007441840171814,
+                    "valLoss": 1.7958157396316528
+                },
+                "updatedDate": "21/04/2024 05:06:40"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 13,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8014906344413757,
+                    "valLoss": 1.7927178072929382
+                },
+                "updatedDate": "21/04/2024 05:03:33"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 12,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8019104228019713,
+                    "valLoss": 1.8016012132167816
+                },
+                "updatedDate": "21/04/2024 05:00:26"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 11,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8022898051738738,
+                    "valLoss": 1.8024371588230133
+                },
+                "updatedDate": "21/04/2024 04:57:18"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 10,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8031126847267152,
+                    "valLoss": 1.8049205017089844
+                },
+                "updatedDate": "21/04/2024 04:54:10"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 9,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8023793787956237,
+                    "valLoss": 1.803981865644455
+                },
+                "updatedDate": "21/04/2024 04:51:03"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 8,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.80285777592659,
+                    "valLoss": 1.7885411632061006
+                },
+                "updatedDate": "21/04/2024 04:47:55"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 7,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8028091745376587,
+                    "valLoss": 1.7952984821796418
+                },
+                "updatedDate": "21/04/2024 04:44:48"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 6,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.803349250793457,
+                    "valLoss": 1.7928744316101075
+                },
+                "updatedDate": "21/04/2024 04:41:40"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 5,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8037233831882478,
+                    "valLoss": 1.7968973469734193
+                },
+                "updatedDate": "21/04/2024 04:38:33"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 4,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8038394088745118,
+                    "valLoss": 1.8005455827713013
+                },
+                "updatedDate": "21/04/2024 04:35:25"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 3,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8051031885147095,
+                    "valLoss": 1.7918224227428436
+                },
+                "updatedDate": "21/04/2024 04:32:17"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 2,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8051648516654968,
+                    "valLoss": 1.8096937537193298
+                },
+                "updatedDate": "21/04/2024 04:29:10"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 1,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8079329550266265,
+                    "valLoss": 1.8080048978328704
+                },
+                "updatedDate": "21/04/2024 04:26:03"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 0,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8239924731254578,
+                    "valLoss": 1.8003679835796356
+                },
+                "updatedDate": "21/04/2024 04:22:55"
+            },
+            {
+                "status": "Benchmarking",
+                "detail": "Status detail not specified",
+                "updatedDate": "21/04/2024 04:15:47"
+            },
+            {
+                "status": "Prepared",
+                "detail": "Status detail not specified",
+                "updatedDate": "21/04/2024 04:15:24"
+            },
+            {
+                "status": "idle",
+                "detail": "Status detail not specified",
+                "updatedDate": "21/04/2024 04:15:08"
             }
         ],
         "sb5_lpsb_2_nhl_1024_bs_2048_nb512_lr_1em5_epoch1000_tanh1200_log_10_pt_tanhlogit": [
             {
                 "status": "Training",
                 "detail": {
+                    "epoch": 36,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8050014016628266,
+                    "valLoss": 1.8022509872913361
+                },
+                "updatedDate": "21/04/2024 06:26:09"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 35,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8049501707553863,
+                    "valLoss": 1.809417405128479
+                },
+                "updatedDate": "21/04/2024 06:22:48"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 34,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.804650205373764,
+                    "valLoss": 1.8154487228393554
+                },
+                "updatedDate": "21/04/2024 06:19:26"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 33,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.805015368938446,
+                    "valLoss": 1.8137814283370972
+                },
+                "updatedDate": "21/04/2024 06:16:06"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 32,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8053208305835724,
+                    "valLoss": 1.8133638429641723
+                },
+                "updatedDate": "21/04/2024 06:12:45"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 31,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8042992696762086,
+                    "valLoss": 1.8079844033718109
+                },
+                "updatedDate": "21/04/2024 06:09:24"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 30,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8048801388740539,
+                    "valLoss": 1.8148044884204864
+                },
+                "updatedDate": "21/04/2024 06:06:03"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 29,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8046414201259613,
+                    "valLoss": 1.8132446146011352
+                },
+                "updatedDate": "21/04/2024 06:02:41"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 28,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8056461825370789,
+                    "valLoss": 1.8210187101364135
+                },
+                "updatedDate": "21/04/2024 05:59:20"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 27,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8054570989608765,
+                    "valLoss": 1.811486600637436
+                },
+                "updatedDate": "21/04/2024 05:55:59"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 26,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8055924820899962,
+                    "valLoss": 1.8004367113113404
+                },
+                "updatedDate": "21/04/2024 05:52:38"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 25,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8058810634613036,
+                    "valLoss": 1.8183053541183472
+                },
+                "updatedDate": "21/04/2024 05:49:17"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 24,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8066977035999299,
+                    "valLoss": 1.7997585654258728
+                },
+                "updatedDate": "21/04/2024 05:45:56"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 23,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8058197968006133,
+                    "valLoss": 1.8133829200267793
+                },
+                "updatedDate": "21/04/2024 05:42:35"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 22,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8059746749401093,
+                    "valLoss": 1.8186095893383025
+                },
+                "updatedDate": "21/04/2024 05:39:14"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 21,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8056794741153717,
+                    "valLoss": 1.8069443476200104
+                },
+                "updatedDate": "21/04/2024 05:35:53"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 20,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8064826169013977,
+                    "valLoss": 1.8159425044059754
+                },
+                "updatedDate": "21/04/2024 05:32:33"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 19,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8059652416706085,
+                    "valLoss": 1.812097306251526
+                },
+                "updatedDate": "21/04/2024 05:29:13"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 18,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8073427186012267,
+                    "valLoss": 1.8116840600967408
+                },
+                "updatedDate": "21/04/2024 05:25:51"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 17,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8065147206783294,
+                    "valLoss": 1.8223689532279967
+                },
+                "updatedDate": "21/04/2024 05:22:30"
+            },
+            {
+                "status": "Training",
+                "detail": {
                     "epoch": 16,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005622809284366668,
-                    "valLoss": 0.0056587077770382166
+                    "trainLoss": 1.8073999750614167,
+                    "valLoss": 1.8212830924987793
                 },
-                "updatedDate": "21/04/2024 02:04:58"
+                "updatedDate": "21/04/2024 05:19:09"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 15,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005640789308585226,
-                    "valLoss": 0.005659479373134673
+                    "trainLoss": 1.8074061350822448,
+                    "valLoss": 1.830319277048111
                 },
-                "updatedDate": "21/04/2024 02:01:12"
+                "updatedDate": "21/04/2024 05:15:47"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 14,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005649773123674095,
-                    "valLoss": 0.005661674342118204
+                    "trainLoss": 1.8081297430992127,
+                    "valLoss": 1.814399094581604
                 },
-                "updatedDate": "21/04/2024 01:57:25"
+                "updatedDate": "21/04/2024 05:12:27"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 13,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005647081053815782,
-                    "valLoss": 0.005668211914598942
+                    "trainLoss": 1.8082598485946655,
+                    "valLoss": 1.8129567003250122
                 },
-                "updatedDate": "21/04/2024 01:53:38"
+                "updatedDate": "21/04/2024 05:09:05"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 12,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005660345884039998,
-                    "valLoss": 0.00568472158163786
+                    "trainLoss": 1.8078513164520265,
+                    "valLoss": 1.8094029998779297
                 },
-                "updatedDate": "21/04/2024 01:49:49"
+                "updatedDate": "21/04/2024 05:05:43"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 11,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005667505539022386,
-                    "valLoss": 0.005702902781777084
+                    "trainLoss": 1.8094467210769654,
+                    "valLoss": 1.8163642919063567
                 },
-                "updatedDate": "21/04/2024 01:46:01"
+                "updatedDate": "21/04/2024 05:02:20"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 10,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005657244592905044,
-                    "valLoss": 0.005676008043810726
+                    "trainLoss": 1.8091552338600159,
+                    "valLoss": 1.8236019933223724
                 },
-                "updatedDate": "21/04/2024 01:42:13"
+                "updatedDate": "21/04/2024 04:58:56"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 9,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.0056453309142962095,
-                    "valLoss": 0.005690105212852359
+                    "trainLoss": 1.8090567157268524,
+                    "valLoss": 1.8117351067066192
                 },
-                "updatedDate": "21/04/2024 01:38:26"
+                "updatedDate": "21/04/2024 04:55:34"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 8,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005659706629812717,
-                    "valLoss": 0.005691109686158598
+                    "trainLoss": 1.8096986410617828,
+                    "valLoss": 1.804339301586151
                 },
-                "updatedDate": "21/04/2024 01:34:41"
+                "updatedDate": "21/04/2024 04:52:10"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 7,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005675335854291916,
-                    "valLoss": 0.005693898131139577
+                    "trainLoss": 1.810123108148575,
+                    "valLoss": 1.8145760250091554
                 },
-                "updatedDate": "21/04/2024 01:30:54"
+                "updatedDate": "21/04/2024 04:48:48"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 6,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.0056939138472080235,
-                    "valLoss": 0.005697248568758369
+                    "trainLoss": 1.8104495620727539,
+                    "valLoss": 1.8203358149528504
                 },
-                "updatedDate": "21/04/2024 01:27:08"
+                "updatedDate": "21/04/2024 04:45:25"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 5,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005695981665514409,
-                    "valLoss": 0.005707979002036154
+                    "trainLoss": 1.8117271394729615,
+                    "valLoss": 1.817030563354492
                 },
-                "updatedDate": "21/04/2024 01:23:20"
+                "updatedDate": "21/04/2024 04:42:02"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 4,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005701593260280788,
-                    "valLoss": 0.005700474311597645
+                    "trainLoss": 1.812283365726471,
+                    "valLoss": 1.8197948729991913
                 },
-                "updatedDate": "21/04/2024 01:19:33"
+                "updatedDate": "21/04/2024 04:38:40"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 3,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005674112594686449,
-                    "valLoss": 0.005718498043715953
+                    "trainLoss": 1.8125361111164093,
+                    "valLoss": 1.8351036393642426
                 },
-                "updatedDate": "21/04/2024 01:15:50"
+                "updatedDate": "21/04/2024 04:35:17"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 2,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005722291276790202,
-                    "valLoss": 0.005748247359879315
+                    "trainLoss": 1.8139613490104676,
+                    "valLoss": 1.809596711397171
                 },
-                "updatedDate": "21/04/2024 01:12:06"
+                "updatedDate": "21/04/2024 04:31:53"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 1,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.00572736559342593,
-                    "valLoss": 0.005753665999509394
+                    "trainLoss": 1.8148307819366456,
+                    "valLoss": 1.8095206212997437
                 },
-                "updatedDate": "21/04/2024 01:08:16"
+                "updatedDate": "21/04/2024 04:28:31"
             },
             {
                 "status": "Training",
                 "detail": {
                     "epoch": 0,
                     "maxEpoch": 1000,
-                    "trainLoss": 0.005906203498132527,
-                    "valLoss": 0.005776488767005503
+                    "trainLoss": 1.827179969549179,
+                    "valLoss": 1.8271211373806
                 },
-                "updatedDate": "21/04/2024 01:04:25"
+                "updatedDate": "21/04/2024 04:25:07"
             },
             {
                 "status": "Benchmarking",
                 "detail": "Status detail not specified",
-                "updatedDate": "21/04/2024 00:55:39"
+                "updatedDate": "21/04/2024 04:17:12"
             },
             {
                 "status": "Prepared",
                 "detail": "Status detail not specified",
-                "updatedDate": "21/04/2024 00:54:45"
+                "updatedDate": "21/04/2024 04:16:29"
             },
             {
                 "status": "idle",
                 "detail": "Status detail not specified",
-                "updatedDate": "21/04/2024 00:53:43"
+                "updatedDate": "21/04/2024 04:15:18"
+            }
+        ],
+        "sb5_lpsb_2_nhl_2048_bs_2048_nb512_lr_1em5_epoch1000_tanh1200_log_10_pt_log": [
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 32,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.790056948661804,
+                    "valLoss": 1.7979742431640624
+                },
+                "updatedDate": "21/04/2024 06:25:49"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 31,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7904829616546631,
+                    "valLoss": 1.7776160871982574
+                },
+                "updatedDate": "21/04/2024 06:22:17"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 30,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7922559909820557,
+                    "valLoss": 1.7758875751495362
+                },
+                "updatedDate": "21/04/2024 06:18:45"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 29,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.791717572927475,
+                    "valLoss": 1.7729393029212952
+                },
+                "updatedDate": "21/04/2024 06:15:13"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 28,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7926423506736755,
+                    "valLoss": 1.779091430902481
+                },
+                "updatedDate": "21/04/2024 06:11:40"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 27,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7930780744552612,
+                    "valLoss": 1.7820080864429473
+                },
+                "updatedDate": "21/04/2024 06:08:07"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 26,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.792216131210327,
+                    "valLoss": 1.788117197751999
+                },
+                "updatedDate": "21/04/2024 06:04:35"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 25,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7924152870178223,
+                    "valLoss": 1.787371655702591
+                },
+                "updatedDate": "21/04/2024 06:01:03"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 24,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7934460215568542,
+                    "valLoss": 1.772847089767456
+                },
+                "updatedDate": "21/04/2024 05:57:31"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 23,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7936390063762664,
+                    "valLoss": 1.788418470621109
+                },
+                "updatedDate": "21/04/2024 05:53:59"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 22,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7934435334205627,
+                    "valLoss": 1.790585889816284
+                },
+                "updatedDate": "21/04/2024 05:50:26"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 21,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7948762075901032,
+                    "valLoss": 1.7805722570419311
+                },
+                "updatedDate": "21/04/2024 05:46:52"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 20,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.794101841211319,
+                    "valLoss": 1.7769645512104035
+                },
+                "updatedDate": "21/04/2024 05:43:17"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 19,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.794817773103714,
+                    "valLoss": 1.7825667786598205
+                },
+                "updatedDate": "21/04/2024 05:39:44"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 18,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.794608359336853,
+                    "valLoss": 1.79235431432724
+                },
+                "updatedDate": "21/04/2024 05:36:12"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 17,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7947508232593536,
+                    "valLoss": 1.788936480283737
+                },
+                "updatedDate": "21/04/2024 05:32:40"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 16,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7946463198661804,
+                    "valLoss": 1.7834209048748015
+                },
+                "updatedDate": "21/04/2024 05:29:07"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 15,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7958631474971771,
+                    "valLoss": 1.7784021770954133
+                },
+                "updatedDate": "21/04/2024 05:25:34"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 14,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7961547219753264,
+                    "valLoss": 1.7810217189788817
+                },
+                "updatedDate": "21/04/2024 05:22:01"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 13,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7963397207260132,
+                    "valLoss": 1.7775545692443848
+                },
+                "updatedDate": "21/04/2024 05:18:29"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 12,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7963850824832917,
+                    "valLoss": 1.7829720878601074
+                },
+                "updatedDate": "21/04/2024 05:14:56"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 11,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7967417273521424,
+                    "valLoss": 1.7895167887210846
+                },
+                "updatedDate": "21/04/2024 05:11:23"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 10,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.798335040807724,
+                    "valLoss": 1.7881414914131164
+                },
+                "updatedDate": "21/04/2024 05:07:49"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 9,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7972683477401734,
+                    "valLoss": 1.7881856489181518
+                },
+                "updatedDate": "21/04/2024 05:04:18"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 8,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.7974363768100738,
+                    "valLoss": 1.7892196309566497
+                },
+                "updatedDate": "21/04/2024 05:00:47"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 7,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.798211583852768,
+                    "valLoss": 1.7924485051631927
+                },
+                "updatedDate": "21/04/2024 04:57:15"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 6,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.799587301492691,
+                    "valLoss": 1.785205020904541
+                },
+                "updatedDate": "21/04/2024 04:53:41"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 5,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8002387404441833,
+                    "valLoss": 1.7987640011310577
+                },
+                "updatedDate": "21/04/2024 04:50:07"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 4,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8007652986049651,
+                    "valLoss": 1.7927225744724273
+                },
+                "updatedDate": "21/04/2024 04:46:32"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 3,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8016083111763002,
+                    "valLoss": 1.7989836990833283
+                },
+                "updatedDate": "21/04/2024 04:42:58"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 2,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8026627581119536,
+                    "valLoss": 1.7889205133914947
+                },
+                "updatedDate": "21/04/2024 04:39:23"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 1,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8048437786102296,
+                    "valLoss": 1.7985848259925843
+                },
+                "updatedDate": "21/04/2024 04:35:48"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 0,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.815174976348877,
+                    "valLoss": 1.7978003776073457
+                },
+                "updatedDate": "21/04/2024 04:32:14"
+            },
+            {
+                "status": "Benchmarking",
+                "detail": "Status detail not specified",
+                "updatedDate": "21/04/2024 04:24:15"
+            },
+            {
+                "status": "Prepared",
+                "detail": "Status detail not specified",
+                "updatedDate": "21/04/2024 04:23:30"
+            },
+            {
+                "status": "idle",
+                "detail": "Status detail not specified",
+                "updatedDate": "21/04/2024 04:22:38"
+            }
+        ],
+        "sb5_lpsb_2_nhl_2048_bs_2048_nb512_lr_1em5_epoch1000_tanh1200_log_10_pt_tanhlogit": [
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 35,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8022394495010376,
+                    "valLoss": 1.7942391705513
+                },
+                "updatedDate": "21/04/2024 06:24:33"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 34,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8016905262470246,
+                    "valLoss": 1.803223385810852
+                },
+                "updatedDate": "21/04/2024 06:21:17"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 33,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8025573811531066,
+                    "valLoss": 1.795638954639435
+                },
+                "updatedDate": "21/04/2024 06:18:01"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 32,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8021144318580626,
+                    "valLoss": 1.8034090495109558
+                },
+                "updatedDate": "21/04/2024 06:14:48"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 31,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8016084713935852,
+                    "valLoss": 1.8003624737262727
+                },
+                "updatedDate": "21/04/2024 06:11:34"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 30,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8023354973793029,
+                    "valLoss": 1.7980640864372253
+                },
+                "updatedDate": "21/04/2024 06:08:20"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 29,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8030274212360382,
+                    "valLoss": 1.8027560889720917
+                },
+                "updatedDate": "21/04/2024 06:05:06"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 28,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8020314977169036,
+                    "valLoss": 1.792342929840088
+                },
+                "updatedDate": "21/04/2024 06:01:51"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 27,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.802492429971695,
+                    "valLoss": 1.7947088420391082
+                },
+                "updatedDate": "21/04/2024 05:58:34"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 26,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8031271069049835,
+                    "valLoss": 1.8127491092681884
+                },
+                "updatedDate": "21/04/2024 05:55:19"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 25,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8033055422306061,
+                    "valLoss": 1.8060621643066406
+                },
+                "updatedDate": "21/04/2024 05:52:04"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 24,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.802652931690216,
+                    "valLoss": 1.8066517221927643
+                },
+                "updatedDate": "21/04/2024 05:48:46"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 23,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8034843292236329,
+                    "valLoss": 1.8017054522037506
+                },
+                "updatedDate": "21/04/2024 05:45:30"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 22,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.803175531387329,
+                    "valLoss": 1.8201530539989472
+                },
+                "updatedDate": "21/04/2024 05:42:13"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 21,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8040165300369262,
+                    "valLoss": 1.791118061542511
+                },
+                "updatedDate": "21/04/2024 05:38:55"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 20,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8035064992904664,
+                    "valLoss": 1.815799105167389
+                },
+                "updatedDate": "21/04/2024 05:35:39"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 19,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8035500674247742,
+                    "valLoss": 1.800504232645035
+                },
+                "updatedDate": "21/04/2024 05:32:23"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 18,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.804140462398529,
+                    "valLoss": 1.8106946992874144
+                },
+                "updatedDate": "21/04/2024 05:29:08"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 17,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8048706307411193,
+                    "valLoss": 1.799731252193451
+                },
+                "updatedDate": "21/04/2024 05:25:51"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 16,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8046447858810424,
+                    "valLoss": 1.7984759294986725
+                },
+                "updatedDate": "21/04/2024 05:22:36"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 15,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8055947926044464,
+                    "valLoss": 1.8046443045139313
+                },
+                "updatedDate": "21/04/2024 05:19:20"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 14,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.805264321565628,
+                    "valLoss": 1.8059979224205016
+                },
+                "updatedDate": "21/04/2024 05:16:04"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 13,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8056540427207948,
+                    "valLoss": 1.8023533129692078
+                },
+                "updatedDate": "21/04/2024 05:12:48"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 12,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.805313064813614,
+                    "valLoss": 1.816294960975647
+                },
+                "updatedDate": "21/04/2024 05:09:33"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 11,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8064377281665802,
+                    "valLoss": 1.8048489224910735
+                },
+                "updatedDate": "21/04/2024 05:06:16"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 10,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8056673359870912,
+                    "valLoss": 1.8200051558017731
+                },
+                "updatedDate": "21/04/2024 05:03:00"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 9,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8072755601406096,
+                    "valLoss": 1.8046973288059234
+                },
+                "updatedDate": "21/04/2024 04:59:43"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 8,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8072699847221374,
+                    "valLoss": 1.7987995505332948
+                },
+                "updatedDate": "21/04/2024 04:56:26"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 7,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8070979216098786,
+                    "valLoss": 1.801180627346039
+                },
+                "updatedDate": "21/04/2024 04:53:12"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 6,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8088897399902344,
+                    "valLoss": 1.7904190385341645
+                },
+                "updatedDate": "21/04/2024 04:49:57"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 5,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8089256870746613,
+                    "valLoss": 1.8019966304302215
+                },
+                "updatedDate": "21/04/2024 04:46:41"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 4,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8104337918758393,
+                    "valLoss": 1.8068479025363922
+                },
+                "updatedDate": "21/04/2024 04:43:23"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 3,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8115069036483764,
+                    "valLoss": 1.803175014257431
+                },
+                "updatedDate": "21/04/2024 04:40:06"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 2,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8118805928230286,
+                    "valLoss": 1.8135110998153687
+                },
+                "updatedDate": "21/04/2024 04:36:47"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 1,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.8121817636489868,
+                    "valLoss": 1.798771072626114
+                },
+                "updatedDate": "21/04/2024 04:33:30"
+            },
+            {
+                "status": "Training",
+                "detail": {
+                    "epoch": 0,
+                    "maxEpoch": 1000,
+                    "trainLoss": 1.823653446674347,
+                    "valLoss": 1.8005778110027313
+                },
+                "updatedDate": "21/04/2024 04:30:12"
+            },
+            {
+                "status": "Benchmarking",
+                "detail": "Status detail not specified",
+                "updatedDate": "21/04/2024 04:22:53"
+            },
+            {
+                "status": "Prepared",
+                "detail": "Status detail not specified",
+                "updatedDate": "21/04/2024 04:22:30"
+            },
+            {
+                "status": "idle",
+                "detail": "Status detail not specified",
+                "updatedDate": "21/04/2024 04:22:15"
             }
         ],
         "epoch100_CvB_logit_pT_tanh1200": [

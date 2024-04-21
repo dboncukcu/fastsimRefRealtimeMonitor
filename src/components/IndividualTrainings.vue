@@ -20,7 +20,17 @@
           @showed="loading[row.item.trainName] = false"
         ></HistoryDetails>
       </template>
-
+      <template #cell(trainName)="data">
+        <div
+          :style="{
+            'max-width': trainNameCellWidth + 'px',
+            'overflow-x': 'auto',
+            'white-space': 'nowrap',
+          }"
+        >
+          {{ data.item.trainName }}
+        </div>
+      </template>
       <template #cell(actions)="row">
         <b-button size="sm" @click="row.toggleDetails()">
           {{ row.detailsShowing ? "Hide" : "Show" }} Details
@@ -132,22 +142,34 @@ export default {
   props: {
     logs: Object,
   },
+  mounted() {
+    this.updateTrainNameCellWidth();
+    window.addEventListener("resize", this.updateTrainNameCellWidth);
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.updateTrainNameCellWidth);
+  },
   data() {
     return {
       loading: {},
+      trainNameCellWidth: 0,
       mainFields: [
-          {
+        {
           key: "trainName",
           label: "Train Tag",
-          thStyle: { width: "30%", whiteSpace: "normal", wordWrap: "break-word" },
+          thStyle: {
+            width: "35%",
+            whiteSpace: "normal",
+            wordWrap: "break-word",
+          },
           thClass: "text-center",
-          tdClass: "align-middle text-wrap",
+          tdClass: "align-middle text-wrap train-name-cell",
           sortable: true,
         },
         {
           key: "status",
           label: "Status",
-          thStyle: { width: "10%" },
+          thStyle: { width: "5%" },
           thClass: "text-center",
           tdClass: "align-middle",
           sortable: true,
@@ -155,14 +177,14 @@ export default {
         {
           key: "detail",
           label: "Detail",
-          thStyle: { width: "35%" },
+          thStyle: { width: "45%" },
           thClass: "text-center",
           tdClass: "align-middle",
         },
         {
           key: "updatedDate",
           label: "Updated Date",
-          thStyle: { width: "20%" },
+          thStyle: { width: "10%" },
           thClass: "text-center",
           tdClass: "align-middle",
           sortable: true,
@@ -287,13 +309,24 @@ export default {
       return "bg-danger";
     },
     showArch(trainName) {
-      window.open(trainName+'/model_architecture.pdf', "_blank")
+      window.open(trainName + "/model_architecture.pdf", "_blank");
+    },
+    updateTrainNameCellWidth() {
+      const trainNameCell = this.$el.querySelector(".train-name-cell");
+      if (trainNameCell) {
+        this.trainNameCellWidth = trainNameCell.clientWidth;
+      }
     },
   },
 };
 </script>
 
-<style>
+<style scoped>
+.scrollable-train-name {
+  max-width: 200px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
 .pagination-container {
   display: flex;
   justify-content: flex-end;

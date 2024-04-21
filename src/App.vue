@@ -1,7 +1,7 @@
 <template>
   <b-container fluid class="d-flex flex-column vh-100">
     <b-row class="flex-grow-1">
-      <b-container fluid class="w-75">
+      <b-container fluid >
         <!-- Header -->
         <page-title></page-title>
 
