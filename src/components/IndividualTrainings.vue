@@ -50,6 +50,8 @@
               :epoch="row.item.detail.epoch + 1"
               :maxEpoch="row.item.detail.maxEpoch"
               :is-most-updated="true"
+              :estimatedRemainingTime="timeEstimation(row.item.detail)"
+              :updated-time="row.item.updatedDate"
               @click="showLosses(row.item.trainName)"
               @openArch="showArch(row.item.trainName)"
             />
@@ -248,6 +250,19 @@ export default {
     },
   },
   methods: {
+    timeEstimation(detail){
+      if (Object.prototype.hasOwnProperty.call(detail, "meanTime") && Object.prototype.hasOwnProperty.call(detail, "estimatedTime")) {
+        return {
+          meanTime: detail.meanTime,
+          estimatedTime: detail.estimatedTime,
+        }
+      }else {
+        return {
+          meanTime: "NaT",
+          estimatedTime: "NaT",
+        }
+      }
+    },
     convertDateToJSFormat(dateString) {
       const parts = dateString.split(" ");
       const dateParts = parts[0].split("/");

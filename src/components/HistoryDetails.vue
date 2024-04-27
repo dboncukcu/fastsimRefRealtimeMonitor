@@ -24,6 +24,8 @@
                 :epoch="row.item.detail.epoch + 1"
                 :maxEpoch="row.item.detail.maxEpoch"
                 :is-most-updated="row.item.detail.epoch === maxEpoch"
+                :updated-time="row.item.updatedDate"
+                :estimated-remaining-time="timeEstimation(row.item.detail)"
                 @click="showLosses"
               />
             </span>
@@ -124,6 +126,19 @@ export default {
     },
   },
   methods: {
+    timeEstimation(detail){
+      if (Object.prototype.hasOwnProperty.call(detail, "meanTime") && Object.prototype.hasOwnProperty.call(detail, "estimatedTime")) {
+        return {
+          meanTime: detail.meanTime,
+          estimatedTime: detail.estimatedTime,
+        }
+      }else {
+        return {
+          meanTime: "NaT",
+          estimatedTime: "NaT",
+        }
+      }
+    },
     convertDateToJSFormat(dateString) {
       const parts = dateString.split(" ");
       const dateParts = parts[0].split("/");
