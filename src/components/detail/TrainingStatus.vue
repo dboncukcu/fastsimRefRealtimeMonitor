@@ -65,7 +65,6 @@
       >
         {{ meanTime }}
       </b-badge>
-
       <b-badge
         v-if="!isEstimatedFinishTimeExpired && !isHistorical"
         style="margin-left: auto; margin-right: 4%"
@@ -203,14 +202,7 @@ export default {
     //     return formattedTime;
     //   }
     // },
-    getCurrentTimeGMT2() {
-      const now = new Date();
-      const localOffsetMs = now.getTimezoneOffset() * 60 * 1000; // Yerel saat dilimi ofseti (milisaniye cinsinden)
-      const gmt0Ms = now.getTime() + localOffsetMs; // GMT+0 zamanı (milisaniye cinsinden)
-      const gmt2OffsetMs = 2 * 60 * 60 * 1000; // GMT+2 için saat dilimi ofseti (milisaniye cinsinden)
-      const currentTimeGMT2 = new Date(gmt0Ms + gmt2OffsetMs); // GMT+2 zamanı
-      return currentTimeGMT2;
-    },
+
     estimatedTime() {
       if (!this.estimatedFinishTime) {
         return "NaT";
@@ -270,7 +262,7 @@ export default {
         return false;
       }
 
-      const currentDateTime = new Date();
+      const currentDateTime = this.getCurrentTimeGMT2()
       return currentDateTime > this.estimatedFinishTime;
     },
     estimatedFinishTimeDisplay() {
@@ -298,6 +290,14 @@ export default {
     },
   },
   methods: {
+    getCurrentTimeGMT2() {
+      const now = new Date();
+      const localOffsetMs = now.getTimezoneOffset() * 60 * 1000; // Yerel saat dilimi ofseti (milisaniye cinsinden)
+      const gmt0Ms = now.getTime() + localOffsetMs; // GMT+0 zamanı (milisaniye cinsinden)
+      const gmt2OffsetMs = 2 * 60 * 60 * 1000; // GMT+2 için saat dilimi ofseti (milisaniye cinsinden)
+      const currentTimeGMT2 = new Date(gmt0Ms + gmt2OffsetMs); // GMT+2 zamanı
+      return currentTimeGMT2;
+    },
     startTimer() {
       this.timer = setInterval(() => {
         this.updateEstimatedTime += 1;
