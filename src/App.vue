@@ -1,7 +1,7 @@
 <template>
   <b-container fluid class="d-flex flex-column vh-100">
     <b-row class="flex-grow-1">
-      <b-container fluid >
+      <b-container fluid>
         <!-- Header -->
         <page-title></page-title>
 
@@ -10,6 +10,7 @@
 
         <!-- Tablo -->
         <b-tabs
+        v-if="isReady"
           fill
           pills
           card
@@ -20,12 +21,20 @@
           :value="Number(activeTab)"
         >
           <b-tab title="Individual Trainings">
-            <individual-trainings :logs="individualTrainings"></individual-trainings>
+            <individual-trainings
+              :logs="individualTrainings"
+            ></individual-trainings>
           </b-tab>
           <b-tab title="Grouped Trainings">
-            <grouped-trainings :logs="groupedTrainings" :groups="groups"></grouped-trainings>
+            <grouped-trainings
+              :logs="groupedTrainings"
+              :groups="groups"
+            ></grouped-trainings>
           </b-tab>
         </b-tabs>
+        <div v-if="!isReady" class="d-flex justify-content-center mb-3">
+          <b-spinner></b-spinner>
+        </div>
       </b-container>
     </b-row>
     <b-row>
@@ -57,45 +66,49 @@ export default {
       lastLogs: {},
       groups: {},
       individuals: [],
-      activeTab:  ""
+      activeTab: "",
+      isAvailableLogs: false,
+      isAvailableTrainingList: false,
     };
   },
   methods: {
     changeTab(tab) {
       this.activeTab = tab;
       localStorage.setItem("activeTab", tab);
-    }
+    },
   },
   created() {
     this.$axios
       .get("log.json")
       .then(({ data }) => {
         this.lastLogs = data;
+        this.isAvailableLogs = true;
       })
       .catch((error) => {
         console.log(error);
-      })
-      this.$axios
-      .get("trainingList.json")
-      .then(({ data }) => {
-        this.groups = data.groups;
-        this.individuals = data.individuals;
-      })
+      });
+    this.$axios.get("trainingList.json").then(({ data }) => {
+      this.groups = data.groups;
+      this.individuals = data.individuals;
+      this.isAvailableTrainingList = true;
+    });
 
-      const activeTab = localStorage.getItem("activeTab");
-      if (activeTab) {
-        this.activeTab = activeTab
-      }else{
-        this.activeTab = 0
-      }
-
+    const activeTab = localStorage.getItem("activeTab");
+    if (activeTab) {
+      this.activeTab = activeTab;
+    } else {
+      this.activeTab = 0;
+    }
   },
   computed: {
-    displayedTab(){
+    isReady() {
+      return this.isAvailableLogs && this.isAvailableTrainingList;
+    },
+    displayedTab() {
       if (typeof this.activeTab === "number") {
-        return this.activeTab
-      }else{        
-        return 0
+        return this.activeTab;
+      } else {
+        return 0;
       }
     },
     groupedTrainingsName() {

@@ -145,11 +145,9 @@ export default {
       Object.keys(this.logs).forEach((key) => {
         result[key] = { trainName: key, ...this.logs[key] };
       })
-      console.log("result",result)
       return result;
     },
     groupMainItems() {
-      console.log("groupMainItems",this.lastUpdatedItems)
       const template = {
         idle: 0,
         prepared: 0,
@@ -168,7 +166,6 @@ export default {
 
         const updateDates = [];
         value.forEach((t) => {
-          console.log(key,value,t,this.lastUpdatedItems,this.lastUpdatedItems[t])
           temp[this.lastUpdatedItems[t].status.toLowerCase()]++;
           updateDates.push(this.lastUpdatedItems[t].updatedDate);
         });
