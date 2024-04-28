@@ -10,6 +10,7 @@
       @row-clicked="onRowClicked"
       responsive="sm"
       id="mainHistoryTable"
+      :show-empty="true"
     >
     <!-- eslint-disable-next-line vue/no-unused-vars -->
     <template #row-details="row">
@@ -17,7 +18,13 @@
         :logs="getGroupTrainings(row.item.groupName)"
       ></IndividualTrainings>
       </template>
-
+      <template #empty>
+          <div class="text-center">
+            <b-skeleton width="85%"></b-skeleton>
+            <b-skeleton width="55%"></b-skeleton>
+            <b-skeleton width="70%"></b-skeleton>
+          </div>
+        </template>
       <template v-slot:cell(progress)="data">
         <b-progress height="35px">
           <b-progress-bar
@@ -96,7 +103,7 @@ export default {
         {
           key: "progress",
           label: "Progress",
-          thStyle: { width: "50%" },
+          thStyle: { width: "49%" },
           thClass: "text-center",
           tdClass: "text-center align-middle",
         },
@@ -112,7 +119,7 @@ export default {
         {
           key: "actions",
           label: "Actions",
-          thStyle: { width: "5%" },
+          thStyle: { width: "6%" },
           thClass: "text-center",
           tdClass: "text-center align-middle",
         },
@@ -136,16 +143,10 @@ export default {
       return (maxLength+4) * 8; // Buradaki değer, karakter başına tahmini piksel genişliği
     },
     lastUpdatedItems() {
-      const result = {};
+      const result = {}
       Object.keys(this.logs).forEach((key) => {
-        const latestItem = this.logs[key].reduce((prev, current) => {
-          const prevDate = this.convertDateToJSFormat(prev.updatedDate);
-          const currentDate = this.convertDateToJSFormat(current.updatedDate);
-          return prevDate > currentDate ? prev : current;
-        });
-
-        result[key] = { trainName: key, ...latestItem };
-      });
+        result[key] = { trainName: key, ...this.logs[key] };
+      })
       return result;
     },
     groupMainItems() {

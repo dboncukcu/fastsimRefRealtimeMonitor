@@ -54,8 +54,9 @@ export default {
   },
   data() {
     return {
-      logs: {},
+      lastLogs: {},
       groups: {},
+      individuals: [],
       activeTab:  ""
     };
   },
@@ -69,12 +70,17 @@ export default {
     this.$axios
       .get("log.json")
       .then(({ data }) => {
-        this.logs = data.trainingLogs;
-        this.groups = data.groups;
+        this.lastLogs = data;
       })
       .catch((error) => {
         console.log(error);
-      });
+      })
+      this.$axios
+      .get("trainingList.json")
+      .then(({ data }) => {
+        this.groups = data.groups;
+        this.individuals = data.individuals;
+      })
 
       const activeTab = localStorage.getItem("activeTab");
       if (activeTab) {
@@ -97,18 +103,18 @@ export default {
       return Object.values(this.groups).flat();
     },
     groupedTrainings() {
-      return Object.keys(this.logs)
+      return Object.keys(this.lastLogs)
         .filter((key) => this.groupedTrainingsName.includes(key))
         .reduce((obj, key) => {
-          obj[key] = this.logs[key];
+          obj[key] = this.lastLogs[key];
           return obj;
         }, {});
     },
     individualTrainings() {
-      return Object.keys(this.logs)
+      return Object.keys(this.lastLogs)
         .filter((key) => !this.groupedTrainingsName.includes(key))
         .reduce((obj, key) => {
-          obj[key] = this.logs[key];
+          obj[key] = this.lastLogs[key];
           return obj;
         }, {});
     },

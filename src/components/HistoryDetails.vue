@@ -9,7 +9,15 @@
         small
         class="table-wrapper"
         style="width: 100% !important"
+        :show-empty="true"
       >
+        <template #empty>
+          <div class="text-center">
+            <b-skeleton width="100%"></b-skeleton>
+            <b-skeleton width="100%"></b-skeleton>
+            <b-skeleton width="100%"></b-skeleton>
+          </div>
+        </template>
         <template #cell(status)="row">
           <div class="badge-center">
             <b-badge pill :class="getBadgeVariant(row.item.status)">{{
@@ -26,6 +34,7 @@
                 :is-most-updated="row.item.detail.epoch === maxEpoch"
                 :updated-time="row.item.updatedDate"
                 :estimated-remaining-time="timeEstimation(row.item.detail)"
+                :is-historical="true"
                 @click="showLosses"
               />
             </span>
@@ -78,10 +87,6 @@ export default {
     CompletedStatus,
   },
   props: {
-    logs: {
-      type: Array,
-      required: true,
-    },
     trainingName: {
       type: String,
       required: true,
@@ -89,6 +94,7 @@ export default {
   },
   data() {
     return {
+      logs: [],
       detailFields: [
         {
           key: "status",
@@ -111,6 +117,17 @@ export default {
       ],
     };
   },
+  created() {
+    this.$axios
+      .get(this.trainingName + "/log.json")
+      .then(({ data }) => {
+        this.logs = data;
+        // this.logs.shift()
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
   computed: {
     maxEpoch() {
       const epochs = this.logs
@@ -121,22 +138,28 @@ export default {
     sortedLogs() {
       const sortedLogs = [...this.logs];
       return sortedLogs.sort((a, b) => {
-        return this.convertDateToJSFormat(b.updatedDate) - this.convertDateToJSFormat(a.updatedDate);
+        return (
+          this.convertDateToJSFormat(b.updatedDate) -
+          this.convertDateToJSFormat(a.updatedDate)
+        );
       });
     },
   },
   methods: {
-    timeEstimation(detail){
-      if (Object.prototype.hasOwnProperty.call(detail, "meanTime") && Object.prototype.hasOwnProperty.call(detail, "estimatedTime")) {
+    timeEstimation(detail) {
+      if (
+        Object.prototype.hasOwnProperty.call(detail, "meanTime") &&
+        Object.prototype.hasOwnProperty.call(detail, "estimatedTime")
+      ) {
         return {
           meanTime: detail.meanTime,
           estimatedTime: detail.estimatedTime,
-        }
-      }else {
+        };
+      } else {
         return {
           meanTime: "NaT",
           estimatedTime: "NaT",
-        }
+        };
       }
     },
     convertDateToJSFormat(dateString) {
@@ -152,7 +175,7 @@ export default {
       return new Date(year, month, day, hour, minute, second);
     },
     showLosses() {
-      this.$emit("showLosses", this.trainingName);
+      this.$emit("showLosses", this.trainingName, this.logs);
     },
     getBadgeVariant(status) {
       status = status.toLowerCase();

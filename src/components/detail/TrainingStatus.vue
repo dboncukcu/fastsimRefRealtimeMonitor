@@ -44,6 +44,7 @@
     >
       {{ epoch }}/{{ maxEpoch }}
     </div>
+
     <div
       v-if="isMostUpdated"
       class="ml-1"
@@ -57,21 +58,22 @@
       "
     >
       <b-badge
-        style="margin-left: auto; margin-right: 4%"
+      style="margin-left: auto; margin-right: 4%"
         v-b-tooltip.hover
         title="Mean Elapsed Seconds per Epoch"
         variant="secondary"
       >
         {{ meanTime }}
       </b-badge>
+
       <b-badge
-        v-if="!isEstimatedFinishTimeExpired"
+        v-if="!isEstimatedFinishTimeExpired && !isHistorical"
         style="margin-left: auto; margin-right: 4%"
         v-b-tooltip.hover
         :title="`Estimated Finishing Time ${estimatedFinishTimeDisplay}`"
         variant="warning"
       >
-      <span :key="updateEstimatedTime"> {{ estimatedTime }}</span>
+        <span :key="updateEstimatedTime"> {{ estimatedTime }}</span>
       </b-badge>
       <button
         class="btn btn-secondary"
@@ -105,7 +107,16 @@
         justify-content: flex-end;
         z-index: 3;
       "
-    ></div>
+    >
+      <b-badge
+      style="margin-left: auto; margin-right: 4%"
+        v-b-tooltip.hover
+        title="Mean Elapsed Seconds per Epoch"
+        variant="secondary"
+      >
+        {{ meanTime }}
+      </b-badge>
+    </div>
   </div>
 </template>
 
@@ -132,6 +143,10 @@ export default {
     updatedTime: {
       type: String,
       required: true,
+    },
+    isHistorical: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
@@ -212,8 +227,8 @@ export default {
       return `${hours}:${minutes}:${seconds}`;
     },
     estimatedFinishTime() {
-        // eslint-disable-next-line
-        let update = this.updateEstimatedTime
+      // eslint-disable-next-line
+      let update = this.updateEstimatedTime;
       if (
         this.estimatedRemainingTime.estimatedTime === "NaT" ||
         this.updatedTime === "NaT"
@@ -238,17 +253,17 @@ export default {
       );
 
       const finishDateTime = new Date(
-        startDateTime.getTime() + estimatedSeconds * 1000 
+        startDateTime.getTime() + estimatedSeconds * 1000
       );
       return finishDateTime;
     },
     isEstimatedFinishTimeExpired() {
-        if (this.estimatedFinishTime === "NaT") {
-            return false;
-        }
-        
-        const currentDateTime = new Date();
-        return currentDateTime > this.estimatedFinishTime;
+      if (this.estimatedFinishTime === "NaT") {
+        return false;
+      }
+
+      const currentDateTime = new Date();
+      return currentDateTime > this.estimatedFinishTime;
     },
     estimatedFinishTimeDisplay() {
       if (this.estimatedFinishTime === "NaT") {

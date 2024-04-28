@@ -11,10 +11,17 @@
       responsive="sm"
       id="mainHistoryTable"
       :sort-compare="customSort"
+      :show-empty="true"
     >
+      <template #empty>
+        <div class="text-center">
+          <b-skeleton width="85%"></b-skeleton>
+          <b-skeleton width="55%"></b-skeleton>
+          <b-skeleton width="70%"></b-skeleton>
+        </div>
+      </template>
       <template #row-details="row">
         <HistoryDetails
-          :logs="logs[row.item.trainName]"
           :trainingName="row.item.trainName"
           @showLosses="showLosses"
           @showed="loading[row.item.trainName] = false"
@@ -52,7 +59,7 @@
               :is-most-updated="true"
               :estimatedRemainingTime="timeEstimation(row.item.detail)"
               :updated-time="row.item.updatedDate"
-              @click="showLosses(row.item.trainName)"
+              @click="showLosses(row.item.trainName, null)"
               @openArch="showArch(row.item.trainName)"
             />
           </span>
@@ -145,16 +152,24 @@ export default {
     logs: Object,
   },
   mounted() {
-    this.updateTrainNameCellWidth();
-    window.addEventListener("resize", this.updateTrainNameCellWidth);
+    this.$nextTick(() => {
+      this.updateTrainNameCellWidth();
+      // window.addEventListener("resize", this.updateTrainNameCellWidth)
+    });
+  },
+  updated() {
+    this.$nextTick(() => {
+      this.updateTrainNameCellWidth();
+      // window.addEventListener("resize", this.updateTrainNameCellWidth)
+    });
   },
   beforeDestroy() {
-    window.removeEventListener("resize", this.updateTrainNameCellWidth);
+    // window.removeEventListener("resize", this.updateTrainNameCellWidth)
   },
   data() {
     return {
       loading: {},
-      trainNameCellWidth: 0,
+      trainNameCellWidth: 1,
       mainFields: [
         {
           key: "trainName",
@@ -164,7 +179,7 @@ export default {
             whiteSpace: "normal",
             wordWrap: "break-word",
           },
-          thClass: "text-center",
+          thClass: "text-center train-name-header",
           tdClass: "align-middle text-wrap train-name-cell",
           sortable: true,
         },
@@ -179,7 +194,7 @@ export default {
         {
           key: "detail",
           label: "Detail",
-          thStyle: { width: "45%" },
+          thStyle: { width: "44%" },
           thClass: "text-center",
           tdClass: "align-middle",
         },
@@ -195,7 +210,7 @@ export default {
         {
           key: "actions",
           label: "Actions",
-          thStyle: { width: "5%" },
+          thStyle: { width: "6%" },
           thClass: "text-center",
           tdClass: "align-middle",
         },
@@ -204,63 +219,56 @@ export default {
       perPage: 7,
       expandedItem: null,
       modalTrainName: "",
+      modalLogs: [],
     };
   },
   computed: {
     historyMainItems() {
       const result = [];
       Object.keys(this.logs).forEach((key) => {
-        const latestItem = this.logs[key].reduce((prev, current) => {
-          const prevDate = this.convertDateToJSFormat(prev.updatedDate);
-          const currentDate = this.convertDateToJSFormat(current.updatedDate);
-          return prevDate > currentDate ? prev : current;
-        });
-
-        result.push({ trainName: key, ...latestItem });
+        result.push({ trainName: key, ...this.logs[key] });
       });
       return result;
     },
     lossInfo() {
-      if (
-        Object.prototype.hasOwnProperty.call(this.logs, this.modalTrainName)
-      ) {
-        return this.logs[this.modalTrainName]
-          .map((item) => {
-            if (item.status.toLowerCase() === "training") {
-              return {
-                epoch: item.detail.epoch,
-                trainLoss: Object.prototype.hasOwnProperty.call(
-                  item.detail,
-                  "trainLoss"
-                )
-                  ? this.sanitizeLossValues(item.detail.trainLoss)
-                  : null,
-                validationLoss: Object.prototype.hasOwnProperty.call(
-                  item.detail,
-                  "trainLoss"
-                )
-                  ? this.sanitizeLossValues(item.detail.valLoss)
-                  : null,
-              };
-            }
-          })
-          .filter((item) => item !== null && item !== undefined);
-      }
-      return [];
+      return this.modalLogs
+        .map((item) => {
+          if (item.status.toLowerCase() === "training") {
+            return {
+              epoch: item.detail.epoch,
+              trainLoss: Object.prototype.hasOwnProperty.call(
+                item.detail,
+                "trainLoss"
+              )
+                ? this.sanitizeLossValues(item.detail.trainLoss)
+                : null,
+              validationLoss: Object.prototype.hasOwnProperty.call(
+                item.detail,
+                "trainLoss"
+              )
+                ? this.sanitizeLossValues(item.detail.valLoss)
+                : null,
+            };
+          }
+        })
+        .filter((item) => item !== null && item !== undefined);
     },
   },
   methods: {
-    timeEstimation(detail){
-      if (Object.prototype.hasOwnProperty.call(detail, "meanTime") && Object.prototype.hasOwnProperty.call(detail, "estimatedTime")) {
+    timeEstimation(detail) {
+      if (
+        Object.prototype.hasOwnProperty.call(detail, "meanTime") &&
+        Object.prototype.hasOwnProperty.call(detail, "estimatedTime")
+      ) {
         return {
           meanTime: detail.meanTime,
           estimatedTime: detail.estimatedTime,
-        }
-      }else {
+        };
+      } else {
         return {
           meanTime: "NaT",
           estimatedTime: "NaT",
-        }
+        };
       }
     },
     convertDateToJSFormat(dateString) {
@@ -296,8 +304,15 @@ export default {
 
       return data;
     },
-    showLosses(trainName) {
-      this.modalTrainName = trainName;
+    async showLosses(trainingName, logs) {
+      this.modalTrainName = trainingName;
+      if (logs === null) {
+        this.modalLogs = await this.$axios
+          .get(trainingName + "/log.json")
+          .then(({ data }) => data);
+      } else {
+        this.modalLogs = logs;
+      }
       this.$bvModal.show("lossChart");
     },
     // eslint-disable-next-line no-unused-vars
@@ -327,10 +342,10 @@ export default {
       window.open(trainName + "/model_architecture.pdf", "_blank");
     },
     updateTrainNameCellWidth() {
-      const trainNameCell = this.$el.querySelector(".train-name-cell");
-      if (trainNameCell) {
-        this.trainNameCellWidth = trainNameCell.clientWidth;
-      }
+      this.$nextTick(() => {
+        const trainNameHeader = this.$el.querySelector(".train-name-header");
+        this.trainNameCellWidth = trainNameHeader.clientWidth;
+      });
     },
   },
 };

@@ -2,6 +2,7 @@
   <b-row class="justify-content-end m-2">
     <b-col cols="auto">
       <b-button variant="primary" class="mr-2" @click="refreshPage">
+        <b-spinner small v-if="countdown===0"></b-spinner>
         {{ countdown !== null ? (countdown === 0 ? "Refreshing Now" : "Refresh - " + countdown + "s") : "Refresh" }}
       </b-button>
     </b-col>
