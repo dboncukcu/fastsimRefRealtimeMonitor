@@ -167,8 +167,8 @@ export default {
         const temp = { ...template };
 
         const updateDates = [];
-
         value.forEach((t) => {
+          console.log(key,value,t,this.lastUpdatedItems[t])
           temp[this.lastUpdatedItems[t].status.toLowerCase()]++;
           updateDates.push(this.lastUpdatedItems[t].updatedDate);
         });
