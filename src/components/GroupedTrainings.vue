@@ -132,24 +132,24 @@ export default {
   },
   computed: {
     minWidth() {
-      // Tüm anahtarları alıp en uzun olanının uzunluğunu bul
       const allKeys = this.groupMainItems.flatMap((item) =>
         Object.keys(item.progress).map(
           (key) => this.capitalizeFirstLetter(key).length
         )
       );
       const maxLength = Math.max(...allKeys);
-      // Varsayılan minimum genişlik değeri, karakter genişliğiyle çarpılır
-      return (maxLength+4) * 8; // Buradaki değer, karakter başına tahmini piksel genişliği
+      return (maxLength+4) * 8; 
     },
     lastUpdatedItems() {
       const result = {}
       Object.keys(this.logs).forEach((key) => {
         result[key] = { trainName: key, ...this.logs[key] };
       })
+      console.log("result",result)
       return result;
     },
     groupMainItems() {
+      console.log("groupMainItems",this.lastUpdatedItems)
       const template = {
         idle: 0,
         prepared: 0,
@@ -168,7 +168,7 @@ export default {
 
         const updateDates = [];
         value.forEach((t) => {
-          console.log(key,value,t,this.lastUpdatedItems[t])
+          console.log(key,value,t,this.lastUpdatedItems,this.lastUpdatedItems[t])
           temp[this.lastUpdatedItems[t].status.toLowerCase()]++;
           updateDates.push(this.lastUpdatedItems[t].updatedDate);
         });
