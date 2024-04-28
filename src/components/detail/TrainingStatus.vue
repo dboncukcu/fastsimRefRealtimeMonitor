@@ -58,7 +58,7 @@
       "
     >
       <b-badge
-      style="margin-left: auto; margin-right: 4%"
+        style="margin-left: auto; margin-right: 4%"
         v-b-tooltip.hover
         title="Mean Elapsed Seconds per Epoch"
         variant="secondary"
@@ -109,7 +109,7 @@
       "
     >
       <b-badge
-      style="margin-left: auto; margin-right: 4%"
+        style="margin-left: auto; margin-right: 4%"
         v-b-tooltip.hover
         title="Mean Elapsed Seconds per Epoch"
         variant="secondary"
@@ -203,12 +203,20 @@ export default {
     //     return formattedTime;
     //   }
     // },
+    getCurrentTimeGMT2() {
+      const now = new Date();
+      const localOffsetMs = now.getTimezoneOffset() * 60 * 1000; // Yerel saat dilimi ofseti (milisaniye cinsinden)
+      const gmt0Ms = now.getTime() + localOffsetMs; // GMT+0 zamanı (milisaniye cinsinden)
+      const gmt2OffsetMs = 2 * 60 * 60 * 1000; // GMT+2 için saat dilimi ofseti (milisaniye cinsinden)
+      const currentTimeGMT2 = new Date(gmt0Ms + gmt2OffsetMs); // GMT+2 zamanı
+      return currentTimeGMT2;
+    },
     estimatedTime() {
       if (!this.estimatedFinishTime) {
         return "NaT";
       }
 
-      const currentTime = new Date();
+      const currentTime = this.getCurrentTimeGMT2();
       const remainingMilliseconds = this.estimatedFinishTime - currentTime;
       const remainingSeconds = Math.floor(remainingMilliseconds / 1000);
 
