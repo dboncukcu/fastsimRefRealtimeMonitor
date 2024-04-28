@@ -228,6 +228,7 @@ export default {
       Object.keys(this.logs).forEach((key) => {
         result.push({ trainName: key, ...this.logs[key] });
       });
+      result.sort((a, b) => this.convertDateToJSFormat(b.updatedDate) - this.convertDateToJSFormat(a.updatedDate))
       return result;
     },
     lossInfo() {
