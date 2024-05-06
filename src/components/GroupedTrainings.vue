@@ -14,29 +14,55 @@
     >
       <!-- eslint-disable-next-line vue/no-unused-vars -->
       <template #row-details="row">
-        <b-form-group
-          label-for="filter-input"
-          label-cols-sm="3"
-          label-align-sm="right"
-          label-size="sm"
-          class="mb-1"
-        >
-          <b-input-group size="sm" class="w-50 ml-auto">
-            <b-form-input
-              id="filter-input"
-              type="search"
-              placeholder="Type to Search"
-              v-model="searchFilter[row.item.groupName]"
-            ></b-form-input>
-            <b-input-group-append>
-              <b-button
-                :disabled="!searchFilter[row.item.groupName]"
-                @click="searchFilter[row.item.groupName] = ''"
-                >Clear</b-button
+        <b-row class="mb-1">
+          <b-col v-if="searchFilter[row.item.groupName]">
+            <b-progress height="35px">
+              <b-progress-bar
+                v-for="(value, key) in calculateProgress(getGroupTrainings(row.item.groupName))"
+                :key="key"
+                :value="value"
+                :max="totalProgress(calculateProgress(getGroupTrainings(row.item.groupName)))"
+                :variant="getVariant(key)"
+                :style="{ minWidth: value > 0 ? minWidth + 'px' : '0px' }"
               >
-            </b-input-group-append>
-          </b-input-group>
-        </b-form-group>
+                <div
+                  class="d-flex align-items-center justify-content-center"
+                  style="width: 100%"
+                >
+                  <p class="mb-0 font-weight-bold">
+                    {{ capitalizeFirstLetter(key) }} ({{ value }})
+                  </p>
+                </div>
+              </b-progress-bar>
+            </b-progress>
+          </b-col>
+          <b-col>
+            <b-form-group
+              label-for="filter-input"
+              label-cols-sm="3"
+              label-align-sm="right"
+              label-size="sm"
+              class="mb-1"
+            >
+              <b-input-group size="sm" class="w-50 ml-auto">
+                <b-form-input
+                  id="filter-input"
+                  type="search"
+                  placeholder="Type to Search"
+                  v-model="searchFilter[row.item.groupName]"
+                ></b-form-input>
+                <b-input-group-append>
+                  <b-button
+                    :disabled="!searchFilter[row.item.groupName]"
+                    @click="searchFilter[row.item.groupName] = ''"
+                    >Clear</b-button
+                  >
+                </b-input-group-append>
+              </b-input-group>
+            </b-form-group>
+          </b-col>
+        </b-row>
+
         <IndividualTrainings
           :logs="getGroupTrainings(row.item.groupName)"
         ></IndividualTrainings>
@@ -216,6 +242,22 @@ export default {
     },
   },
   methods: {
+    calculateProgress(filteredLogs) {
+      const template = {
+        idle: 0,
+        prepared: 0,
+        benchmarking: 0,
+        training: 0,
+        plotting: 0,
+        completed: 0,
+        error: 0,
+      };
+      // eslint-disable-next-line no-unused-vars
+      for (const [key, value] of Object.entries(filteredLogs)) {
+        template[value.status.toLowerCase()]++;
+      }
+      return template
+    },
     openDetails(row) {
       this.searchFilter[row.item.groupName] = "";
       row.toggleDetails();
