@@ -44,7 +44,7 @@
               label-size="sm"
               class="mb-1"
             >
-              <b-input-group size="sm" class="w-50 ml-auto">
+              <b-input-group size="sm" :class='searchFilter[row.item.groupName] ? "w-100 ml-auto" : "w-50 ml-auto" '>
                 <b-form-input
                   id="filter-input"
                   type="search"
