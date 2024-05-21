@@ -29,6 +29,7 @@
             <grouped-trainings
               :logs="groupedTrainings"
               :groups="groups"
+              :results="results"
             ></grouped-trainings>
           </b-tab>
         </b-tabs>
@@ -67,6 +68,7 @@ export default {
       groups: {},
       individuals: [],
       activeTab: "",
+      results: {},
       isAvailableLogs: false,
       isAvailableTrainingList: false,
     };
@@ -91,6 +93,11 @@ export default {
       this.groups = data.groups;
       this.individuals = data.individuals;
       this.isAvailableTrainingList = true;
+    });
+    this.$axios.get("results.json").then(({ data }) => {
+      this.results = data;
+    }).catch(() => {
+      this.results = {};
     });
 
     const activeTab = localStorage.getItem("activeTab");

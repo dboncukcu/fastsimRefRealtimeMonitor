@@ -44,7 +44,14 @@
               label-size="sm"
               class="mb-1"
             >
-              <b-input-group size="sm" :class='searchFilter[row.item.groupName] ? "w-100 ml-auto" : "w-50 ml-auto" '>
+              <b-input-group
+                size="sm"
+                :class="
+                  searchFilter[row.item.groupName]
+                    ? 'w-100 ml-auto'
+                    : 'w-50 ml-auto'
+                "
+              >
                 <b-form-input
                   id="filter-input"
                   type="search"
@@ -74,26 +81,35 @@
           <b-skeleton width="70%"></b-skeleton>
         </div>
       </template>
+
       <template v-slot:cell(progress)="data">
-        <b-progress height="35px">
-          <b-progress-bar
-            v-for="(value, key) in data.item.progress"
-            :key="key"
-            :value="value"
-            :max="totalProgress(data.item.progress)"
-            :variant="getVariant(key)"
-            :style="{ minWidth: value > 0 ? minWidth + 'px' : '0px' }"
-          >
-            <div
-              class="d-flex align-items-center justify-content-center"
-              style="width: 100%"
+        <div class="d-flex align-items-center">
+          <b-progress height="35px" class="flex-grow-1">
+            <b-progress-bar
+              v-for="(value, key) in data.item.progress"
+              :key="key"
+              :value="value"
+              :max="totalProgress(data.item.progress)"
+              :variant="getVariant(key)"
+              :style="{ minWidth: value > 0 ? minWidth + 'px' : '0px' }"
             >
-              <p class="mb-0 font-weight-bold">
-                {{ capitalizeFirstLetter(key) }} ({{ value }})
-              </p>
-            </div>
-          </b-progress-bar>
-        </b-progress>
+              <div
+                class="d-flex align-items-center justify-content-center"
+                style="width: 100%"
+              >
+                <p class="mb-0 font-weight-bold">
+                  {{ capitalizeFirstLetter(key) }} ({{ value }})
+                </p>
+              </div>
+            </b-progress-bar>
+          </b-progress>
+          <b-button v-if = "data.item.results.length !== 0" class="ml-2" @click="data.item.isModalVisible = true" variant="warning">
+            <i class="bi bi-table"></i>
+          </b-button>
+          <b-modal  v-model="data.item.isModalVisible" :title="`Loss Analyses of Trainings of ${data.item.groupName}`" scrollable hide-footer size="xl" header-class="justify-content-center">
+            <ResultTable :results="data.item.results"></ResultTable>
+          </b-modal>
+        </div>
       </template>
 
       <template #cell(actions)="row">
@@ -127,14 +143,17 @@
 <script>
 /* eslint-disable */
 import IndividualTrainings from "./IndividualTrainings.vue";
+import ResultTable from "./detail/ResultTable.vue";
 export default {
   name: "GroupedTrainings",
   components: {
     IndividualTrainings,
+    ResultTable
   },
   props: {
     logs: Object,
     groups: Object,
+    results: Object,
   },
   created() {
     for (const key in this.groups) {
@@ -178,7 +197,6 @@ export default {
       currentPage: 1,
       perPage: 8,
       expandedItem: null,
-      modalTrainName: "",
     };
   },
   computed: {
@@ -230,6 +248,8 @@ export default {
           groupName: key,
           progress: temp,
           updatedDate: lastUpdate,
+          isModalVisible: false,
+          results: this.results.hasOwnProperty(key) ? this.transformResultData(this.results[key]) : [],
         });
       }
 
@@ -242,6 +262,23 @@ export default {
     },
   },
   methods: {
+    transformResultData(data) {
+      let transformedData = [];
+      for (let source in data) {
+        for (let loss in data[source]) {
+          let lossData = data[source][loss];
+          transformedData.push({
+            lossName: loss,
+            lossSource: source,
+            minValue: lossData.min,
+            minTrainName: lossData.trainNameForMin,
+            maxValue: lossData.max,
+            maxTrainName: lossData.trainNameForMax
+          });
+        }
+      }
+      return transformedData;
+    },
     calculateProgress(filteredLogs) {
       const template = {
         idle: 0,
@@ -256,7 +293,7 @@ export default {
       for (const [key, value] of Object.entries(filteredLogs)) {
         template[value.status.toLowerCase()]++;
       }
-      return template
+      return template;
     },
     openDetails(row) {
       this.searchFilter[row.item.groupName] = "";
@@ -333,7 +370,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.text-truncate {
+  max-width: 60px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .pagination-container {
   display: flex;
   justify-content: flex-end;
