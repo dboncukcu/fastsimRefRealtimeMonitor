@@ -59,8 +59,8 @@
               :is-most-updated="true"
               :estimatedRemainingTime="timeEstimation(row.item.detail)"
               :updated-time="row.item.updatedDate"
+              :trainName="row.item.trainName"
               @click="showLosses(row.item.trainName, null)"
-              @openArch="showArch(row.item.trainName)"
             />
           </span>
           <span
@@ -338,9 +338,6 @@ export default {
         return "bg-danger";
       }
       return "bg-danger";
-    },
-    showArch(trainName) {
-      window.open(trainName + "/model_architecture.pdf", "_blank");
     },
     updateTrainNameCellWidth() {
       this.$nextTick(() => {

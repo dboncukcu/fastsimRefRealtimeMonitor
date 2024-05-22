@@ -87,7 +87,8 @@ export default {
             height: 350,
           },
           // colors: [ "#1B998B","#E91E63", "#546E7A", "#2E294E"],
-          colors: ["#2983FF", "#EA3546", "#662E9B", "#2E294E"],
+          // colors: ["#2983FF", "#EA3546", "#662E9B", "#2E294E"],
+          colors: ["#2983FF", "#EA3546", "#2983FF", "#EA3546"],
           markers: {
             size: [4, 4, 0, 0],
           },
@@ -103,7 +104,10 @@ export default {
             strokeDashArray: 0.3,
           },
           xaxis: {
-            categories: this.series.epochs.map((e) => `${e + 1} Epochs`),
+            tickAmount: 50,
+            tickPlacement: 'on',
+            // categories: this.series.epochs.map((e) => `${e + 1} Epochs`),
+            title: { text: "Epochs", offsetY: -30}
           },
           yaxis: {
             labels: {
@@ -173,6 +177,7 @@ export default {
 
       return predictions;
     },
+    
   },
 };
 </script>

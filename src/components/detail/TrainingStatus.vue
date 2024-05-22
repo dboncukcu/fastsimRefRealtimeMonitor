@@ -88,7 +88,7 @@
         class="btn btn-secondary ml-1"
         style="width: 45%"
         data-toggle="modal"
-        @click="$emit('openArch')"
+        @click="openArch"
         v-b-tooltip.hover
         title="Show Model Architecture"
       >
@@ -147,6 +147,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    trainName : {
+      type: String,
+      required: true,
+    }
   },
   data() {
     return {
@@ -290,6 +294,9 @@ export default {
     },
   },
   methods: {
+    openArch() {
+      window.open(this.trainName + "/model_architecture.pdf", "_blank");
+    },
     getCurrentTimeGMT2() {
       const now = new Date();
       const localOffsetMs = now.getTimezoneOffset() * 60 * 1000; // Yerel saat dilimi ofseti (milisaniye cinsinden)

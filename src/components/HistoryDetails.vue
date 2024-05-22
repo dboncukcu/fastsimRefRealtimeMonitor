@@ -36,6 +36,7 @@
                 :estimated-remaining-time="timeEstimation(row.item.detail)"
                 :is-historical="true"
                 @click="showLosses"
+                :train-name="trainingName"
               />
             </span>
             <span
